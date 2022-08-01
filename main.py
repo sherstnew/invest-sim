@@ -2,6 +2,9 @@ from flask import render_template, request, redirect, make_response
 from flask import Flask
 import sqlite3
 import json
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 login = ''
 uname = ''
@@ -81,6 +84,7 @@ def reg():
     uname = login
     if password == password2 and len(password) >= 6 and "@" in email and "." in email and login != "None" and len(
             login) >= 3:
+
         sqle = f"""insert into  reg1 (name_id, email, password)
         Values ("{login}","{email}","{password}"
         )"""
@@ -97,6 +101,18 @@ def reg():
         cursor.close()
         connection.close()
         global token
+        msg = MIMEMultipart()
+        msg['From'] = 'investmentsimulator@yandex.ru'
+        msg['To'] = 'you@gmail.com'
+        msg['Subject'] = 'Test e-mail send'
+        message = 'Test e-mail send'
+        msg.attach(MIMEText(message))
+        mailserver = smtplib.SMTP_SSL('smtp.yandex.com', 465)
+        mailserver.ehlo()
+        mailserver.ehlo()
+        mailserver.login('investmentsimulator@yandex.ru', 'tiefsgvtcfkwdeos')
+        mailserver.sendmail('investmentsimulator@yandex.ru', email, msg.as_string())
+        mailserver.quit()
 
     return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
 
