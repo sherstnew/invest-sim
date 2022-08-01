@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Настройки</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="/static/styles/menu.css">
+    <link rel="stylesheet" href="/static/styles/stylesettings.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+  </head>
+  <body>
+  <div class="menu">
+    <a href="/">
+      <div class="menu_index">
+        <span class="menu_index_text">Главная</span>
+        <i class="uil uil-bag"></i>
+      </div>
+    </a>
+    <a href="/buy">
+      <div class="menu_buy">
+        <span class="menu_buy_text">Купить</span>
+        <i class="uil uil-credit-card"></i>
+      </div>
+    </a>
+    <a href="/profile">
+      <div class="menu_profile">
+        <span class="menu_profile_text">Профиль</span>
+        <i class="uil uil-user-circle"></i>
+      </div>
+    </a>
+  </div>
+    <div class="container">
+<span class="hello">Привет, {{uname}}!</span>
+<img src="{{userpic}}" class="userpic">
+<form name="settings" method="POST">
+<input type="text" name="uname" value="{{uname}}" class="uname" placeholder="Редактировать имя">
+<input type="password" name="pass" value="{{passw}}" class="pass" placeholder="Редактировать пароль" >
+<input type="email" name="email" value="{{email}}" class="email" placeholder="Редактировать E-Mail" >
+</form>
+ <ul class="edit">
+   <li><i class="uil uil-edit-alt"></i></li>
+   <li><i class="uil uil-edit-alt"></i></li>
+   <li><i class="uil uil-edit-alt"></i></li>
+ </ul>
+      <i onclick="submit()" class="uil uil-check"></i>
+    </div>
+    <script type="text/javascript">
+      function submit() {
+        let form = document.querySelector('form')
+        form.submit()
+      }
+    </script>
+  </body>
+</html>

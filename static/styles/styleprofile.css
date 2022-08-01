@@ -1,0 +1,154 @@
+.attribute {
+  font-size: 13px;
+  color: #060000;
+  position: absolute;
+  left: 50px;
+  top: 860px;
+  text-decoration: underline;
+}
+.container {
+  background: linear-gradient(45deg, rgb(255, 238, 187), rgb(255, 248, 228, 0.2));
+  box-shadow: -15px 15px 0px 1px rgba(249, 231, 175, 1);
+  width: 700px;
+  height: 900px;
+  border-radius: 12px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.userpic {
+  border-radius: 12px;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  width: 120px;
+  height: 125px;
+}
+.userhead {
+  position: absolute;
+  left: 200px;
+  top: 55px;
+  font-size: 30px;
+}
+.status {
+  font-size: 23px;
+  color: #8FBFB8;
+}
+
+.settings {
+  position: absolute;
+  top: 200px;
+  left: 50px;
+  width: 600px;
+  height: 100px;
+  background-color: #fffbff;
+  font-size: 20px;
+  border-radius: 7px;
+  transition: 0.5s;
+}
+.uil.uil-setting{
+  font-size: 50px;
+  position: absolute;
+  left: 150px;
+  top: 20px;
+  transition: 1s;
+}
+.settext {
+  position: absolute;
+  left: 230px;
+  top: 37px;
+  color: #060000;
+  font-size: 22px;
+  transition: 0.5s;
+}
+.settings:hover {
+  transition: 0.5s;
+  border-radius: 20px;
+}
+.settings:hover .uil.uil-setting {
+  transition: 1s;
+  transform: rotate(360deg);
+}
+.settings:hover .settext {
+  color: #1A374D;
+  transition: 0.5s;
+}
+
+.history {
+  position: absolute;
+  top: 350px;
+  left: 50px;
+  width: 600px;
+  height: 100px;
+  background-color: #fffbff;
+  font-size: 20px;
+  border-radius: 7px;
+  transition: 0.5s;
+}
+.uil.uil-history {
+  font-size: 50px;
+  position: absolute;
+  left: 130px;
+  top: 20px;
+  transition: 1s;
+}
+.histtext {
+  position: absolute;
+  left: 200px;
+  top: 37px;
+  color: #060000;
+  font-size: 22px;
+  transition: 0.5s;
+}
+.history:hover {
+  transition: 0.5s;
+  border-radius: 20px;
+}
+.history:hover .uil.uil-history{
+  transition: 1s;
+  transform: rotate(360deg);
+}
+.history:hover .histtext{
+  color: #1A374D;
+  transition: 0.5s;
+}
+
+.plan {
+  position: absolute;
+  top: 500px;
+  left: 50px;
+  width: 600px;
+  height: 100px;
+  background-color: #fffbff;
+  font-size: 20px;
+  border-radius: 7px;
+  transition: 0.5s;
+}
+.uil.uil-clipboard-notes {
+  font-size: 50px;
+  position: absolute;
+  left: 170px;
+  top: 20px;
+  transition: 1s;
+}
+.plantext {
+  position: absolute;
+  left: 250px;
+  top: 37px;
+  color: #060000;
+  font-size: 22px;
+  transition: 0.5s;
+}
+.plan:hover {
+  transition: 0.5s;
+  border-radius: 20px;
+}
+.plan:hover .uil.uil-clipboard-notes{
+  transition: 1s;
+  transform: rotate(360deg);
+}
+.plan:hover .plantext{
+  color: #1A374D;
+  transition: 0.5s;
+}

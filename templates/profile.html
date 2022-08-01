@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Профиль</title>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <link rel="stylesheet" href="/static/styles/styleprofile.css">
+      <link rel="stylesheet" href="/static/styles/menu.css">
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+  </head>
+  <body>
+  <div class="menu">
+    <a href="/">
+      <div class="menu_index">
+        <span class="menu_index_text">Главная</span>
+        <i class="uil uil-bag"></i>
+      </div>
+    </a>
+    <a href="/buy">
+      <div class="menu_buy">
+        <span class="menu_buy_text">Купить</span>
+        <i class="uil uil-credit-card"></i>
+      </div>
+    </a>
+    <a href="/profile">
+      <div class="menu_profile">
+        <span class="menu_profile_text">Профиль</span>
+        <i class="uil uil-user-circle"></i>
+      </div>
+    </a>
+  </div>
+    <div class="container">
+<img src="{{userpic}}" class="userpic">
+<div class="userhead">
+    {{username}}
+  <div class="status">
+    {{status}}
+  </div>
+</div>
+<a href="/settings">
+<div class="settings">
+  <i class="uil uil-setting"></i>
+<span class="settext">Настройки</span>
+</div>
+</a>
+<a href="/history">
+<div class="history">
+  <i class="uil uil-history"></i>
+  <span class="histtext">История операций</span>
+</div>
+</a>
+<a href="/plan">
+  <div class="plan">
+    <i class="uil uil-clipboard-notes"></i>
+    <span class="plantext">Тариф</span>
+  </div>
+</a>
+<a href="/attr"><span class="attribute">Были использованы технологии и ресурсы</span></a>
+    </div>
+  </body>
+</html>

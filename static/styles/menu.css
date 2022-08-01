@@ -1,0 +1,127 @@
+a {
+  color: #060000;
+  height: 200px;
+  width: 200px;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffba43;
+    color: #060000;
+}
+.menu {
+  z-index: 1;
+  height: 600px;
+  width: 200px;
+  position: fixed;
+  top: -20px;
+  left: -120px;
+  background: none;
+  border-radius: 12px;
+  font-size: 19px;
+  transition: 1s;
+}
+.menu:hover {
+  position: absolute;
+  left: -10px;
+  transition: 1s;
+}
+
+
+.menu_index {
+  height: 200px;
+  width: 200px;
+  border-radius: 12px;
+  transition: 1s;
+}
+.menu_index:hover {
+  opacity: 0.7;
+  background-color: #FFFDDE;
+  transition: 1s;
+}
+.menu_index:hover .uil.uil-bag {
+  transform: rotate(360deg);
+  transition: 1s;
+  color: #060000;
+}
+.uil.uil-bag {
+  color: #FFFDDE;
+  font-size: 50px;
+  position: absolute;
+  left: 130px;
+  top: 70px;
+  transition: 1s;
+}
+.menu_index_text {
+  position: absolute;
+  top: 85px;
+  left: 20px;
+  font-size: 20px;
+}
+
+
+.menu_buy {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 200px;
+  transition: 1s;
+  border-radius: 12px;
+}
+.menu_buy:hover {
+  opacity: 0.7;
+  background-color: #FFFDDE;
+  transition: 1s;
+}
+.menu_buy:hover .uil.uil-credit-card {
+  transform: rotate(360deg);
+  transition: 1s;
+  color: #060000;
+}
+.uil.uil-credit-card {
+  color: #FFFDDE;
+  font-size: 50px;
+  position: absolute;
+  top: 70px;
+  left: 130px;
+  transition: 1s;
+}
+.menu_buy_text {
+  position: absolute;
+  top: 85px;
+  left: 20px;
+  font-size: 20px;
+}
+
+
+.menu_profile {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 400px;
+  transition: 1s;
+  border-radius: 12px;
+}
+.uil.uil-user-circle {
+  color: #FFFDDE;
+  font-size: 50px;
+  position: absolute;
+  top: 70px;
+  left: 130px;
+  transition: 1s;
+}
+.menu_profile_text {
+  position: absolute;
+  top: 85px;
+  left: 20px;
+  font-size: 20px;
+}
+.menu_profile:hover {
+  opacity: 0.7;
+  background-color: #FFFDDE;
+  transition: 1s;
+}
+.menu_profile:hover .uil.uil-user-circle {
+  transform: rotate(360deg);
+  transition: 1s;
+  color: #060000;
+}

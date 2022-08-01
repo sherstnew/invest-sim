@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="1251">
+    <title>Купить/продать</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="/static/styles/menu.css">
+    <link rel="stylesheet" href="/static/styles/stylebuy.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+</head>
+<body>
+<div class="menu">
+    <a href="/">
+        <div class="menu_index">
+            <span class="menu_index_text">Главная</span>
+            <i class="uil uil-bag"></i>
+        </div>
+    </a>
+    <a href="/buy">
+        <div class="menu_buy">
+            <span class="menu_buy_text">Купить</span>
+            <i class="uil uil-credit-card"></i>
+        </div>
+    </a>
+    <a href="/profile">
+        <div class="menu_profile">
+            <span class="menu_profile_text">Профиль</span>
+            <i class="uil uil-user-circle"></i>
+        </div>
+    </a>
+</div>
+<div class="container" onclick="shide('')">
+<div class="header">здесь вы можете <br> купить или продать <br>акции.<br> и не только их.</div>
+    <input type="text" class="search" placeholder="Поиск по бирже">
+    <i class="uil uil-search"></i>
+    <div class="last">
+        <span class="last_text">История просмотров:</span>
+     </div>
+    <ul class="actions">
+        <li v-for="value in actions">
+             [[value]]
+        </li>
+    </ul>
+</div>
+<div class="act_window">
+    <span class="act-nm"></span>
+    <span class="act-desc1">Введите сколько акций вы хотите купить:</span>
+    <span class="act-desc2">акций</span>
+    <span class="act-cost">[[cost]] рублей</span>
+    <form method="POST">
+        <input type="number" name="act_num" class="act-num" v-model="numact">
+    </form>
+    <div class="act-btn" onclick="submit()"><span class="act-btn-text">Выставить заявку</span></div>
+</div>
+<script>
+    var DATA;
+    var request = new XMLHttpRequest();
+
+    request.open('GET', '/static/shares.json');
+
+    request.onloadend = function() {
+
+        DATA = JSON.parse(request.responseText);
+        DATA = DATA.name
+
+
+
+    const container = Vue.createApp({
+        data() {
+            return {
+                actions: DATA,
+                op: 0,
+            }
+        },
+        methods: {},
+        delimiters: ['[[', ']]'],
+    }).mount('.container')
+
+    const buy = Vue.createApp({
+        data() {
+            return {
+                cost: 0,
+                numact: 0,
+            }
+        },
+        watch: {
+            numact: function () {
+                this.cost = this.numact * 2
+            }
+        },
+        delimiters: ['[[', ']]'],
+    }).mount('.act_window')
+
+    const cont = document.querySelector('.container')
+    const name = document.querySelector('.act-nm')
+    const act_window = document.querySelector('.act_window')
+    const actions = JSON.stringify(DATA)
+
+    function submit() {
+        const form = document.querySelector("form")
+        form.submit()
+        form.reset()
+    }
+
+    function shide(action) {
+        if (act_window.style.opacity == 1) {
+            cont.style.filter = 'blur(0px)'
+            act_window.style.opacity = 0
+        } else if (act_window.style.opacity == 0) {
+            cont.style.filter = 'blur(10px)'
+            act_window.style.opacity = 1
+            name.innerHTML = action
+        }
+    }
+
+    document.addEventListener('click', function (e) {
+
+        let tar = e.target
+        let action = tar.innerText
+
+        if (actions.includes(action) && action != '') {
+            shide(action)
+        }
+    })
+
+    }
+
+    request.send();
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/menu.css">
+    <link rel="stylesheet" href="/static/styles/stylereg.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+</head>
+<body>
+<div class="container">
+<div class="header">
+  Регистрация
+</div>
+<div class="loginbut">
+    Вход
+</div>
+<br>
+<form method="POST" name="regform">
+    <ul class="error">
+        <li class="loginerr"></li>
+        <li class="emailerr"></li>
+        <li class="passerr"></li>
+        <li class="comperr"></li>
+    </ul>
+<input type="text" name="login" class="login" placeholder="Введите логин">
+<br>
+<input type="email" name="email" class="email" placeholder="Введите E-Mail">
+<br>
+<input type="password" name="password" class="password" placeholder="Введите пароль">
+<br>
+<input type="password" name="password2" class="password2" placeholder="Повторите пароль">
+<br>
+<input type="button" name="subreg" class="subreg" value=" ">
+<i class="uil uil-user-plus"></i>
+</form>
+</div>
+
+<script>
+let login
+let email
+let password
+let password2
+
+const sub = document.querySelector('.subreg')
+const errorList = document.querySelector('.error')
+errorList.style.opacity = 0
+const login_btn = document.querySelector('.loginbut')
+
+const loginform = document.querySelector('.login')
+const emailform = document.querySelector('.email')
+const passform = document.querySelector('.password')
+const passform2 = document.querySelector('.password2')
+
+const loginerr = document.querySelector('.loginerr')
+const emailerr = document.querySelector('.emailerr')
+const passerr = document.querySelector('.passerr')
+const comperr = document.querySelector('.comperr')
+
+loginform.addEventListener('input', check)
+emailform.addEventListener('input', check)
+passform.addEventListener('input', check)
+passform2.addEventListener('input', check)
+
+function check() {
+    login = loginform.value
+    email = emailform.value
+    password = passform.value
+    password2 = passform2.value
+    if (password == password2 && password.length >= 6 && email.includes("@") && email.includes(".") && login != "None" && login.length >= 3) {
+              errorList.style.opacity = 0
+          } else {
+            errorList.style.opacity = 1
+              if (password != password2) {
+                  comperr.innerHTML = "Пароли не совпадают."
+              } else {
+                  comperr.innerHTML = ''
+              }
+              if (password.length < 7) {
+                  passerr.innerHTML = "В пароле меньше шести символов."
+              } else {
+                  passer.innerHTML = ''
+              }
+              if (email.includes("@") == false || email.includes(".") == false) {
+                  emailerr.innerHTML = "Введите корректный E-mail."
+              } else {
+                  emailerr.innerHTML = ''
+              }
+              if (login.length < 3) {
+                  loginerr.innerHTML = "В логине меньше 3 символов"
+              } else {
+                  loginerr.innerHTML = ''
+              }
+          }
+}
+
+sub.addEventListener('click', ()=>{
+    if (password == password2 && password.length >= 6 && email.includes("@") && email.includes(".") && login != "None" && login.length >= 3) {
+        sub.parentNode.submit()
+    }
+})
+login_btn.addEventListener('click', ()=>{
+    location='/login'
+})
+</script>
+</body>
+</html>
