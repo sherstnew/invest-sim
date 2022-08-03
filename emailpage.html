@@ -62,13 +62,13 @@
     <div class="desc">
         <img src="/static/valeraicon.png" alt="logo" class="logo">
         <br>
-        <span class="up-desc">Здравствуйте, User_Name, чтобы пользоваться нашими услугами осталось только подтвердить вашу электронную почту. Что бы подтвердить почту нажмите на кнопку ниже или скопируйте ссылку email_confirm</span>
+        <span class="up-desc">Здравствуйте, {{login}}, чтобы пользоваться нашими услугами осталось только подтвердить вашу электронную почту. Что бы подтвердить почту нажмите на кнопку ниже или скопируйте ссылку {{email_confirm}}</span>
         <br><br>
         <span class="alert">Если это были не вы, просьба не переходить по ссылке</span>
         <br><br>
         <span class="und-desc">Данное письмо формируется автоматически, пожалуйста, не отвечайте на него </span>
     </div>
-    <div class="conf-btn">Подтвердить</div>
+    <a href="{{email_confirm}}"><div class="conf-btn">Подтвердить</div></a>
 </div>
 </body>
 </html>

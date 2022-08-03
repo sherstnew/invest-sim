@@ -18,8 +18,7 @@ last_name = ''
 username = ''
 token = ''
 tokens = []
-app = Flask(__name__)
-
+email_confirm = ''
 accounts = ''
 connection = sqlite3.connect('regist_db.db')
 cursor = connection.cursor()
@@ -30,7 +29,7 @@ for row in rows:
 connection.commit()
 cursor.close()
 connection.close()
-
+app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -124,7 +123,7 @@ def reg():
         sqle = f"""insert into  reg1 (token, login, email, password)
         Values ("{token_new}", "{login}","{email}","{password}"
         )"""
-        cursor.execute(sqle)
+        cursor.execute("""select * from reg1""")
 
 
         for n in range(1):
@@ -160,9 +159,11 @@ def reg():
         mailserver = smtplib.SMTP_SSL('smtp.gmail.com', 465)
         mailserver.ehlo()
         mailserver.ehlo()
-        mailserver.login('simulatorinvestment@gmail.com', 'tlzwejexxoayhigg') # для яндекса использовать пароль peabnlvsbxgqxlza для гугл tlzwejexxoayhigg
-        mailserver.sendmail('simulatorinvestment@gmail.com', email, msg.as_string())
+        mailserver.login('imulatorinvestmentments@gmail.com', 'vsxhnfdwgukosojk') # для яндекса использовать пароль peabnlvsbxgqxlza для гугл vsxhnfdwgukosojk
+        mailserver.sendmail('imulatorinvestmentments@gmail.com', email, msg.as_string())
         mailserver.quit()
+
+        emailpage()
 
     return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
 
@@ -172,16 +173,22 @@ def login():
         if request.method == 'POST':
             connection = sqlite3.connect('regist_db.db')
             cursor = connection.cursor()
-            cursor.execute(str("SELECT token FROM reg1 WHERE email=(?)"), (email))
+            cursor.execute(f"SELECT token FROM reg1 WHERE email='{email}'")
             token = cursor.fetchall()
             connection.commit()
             cursor.close()
             connection.close()
-        
-            resp = make_response('please wait...')
+
+            token = str(token[0])
+            token = token.replace('(', '')
+            token = token.replace(')', '')
+            token = token.replace(',', '')
+
+
+            resp = make_response(redirect('/', 302))
             resp.set_cookie('token', token)
-            
-            return resp, redirect('/', 302)
+
+            return resp
         else:
             return render_template('/login.html', accounts = accounts)
 
@@ -232,7 +239,9 @@ def plan():
 @app.route('/attr', methods=['GET', 'POST'])
 def attr():
     return render_template('/attr.html')
-
+@app.route('/emailpage', methods=['GET', 'POST'])
+def emailpage():
+    return render_template('/emailpage.html', login=login, email_confirm=email_confirm)
 
 
 app.run()
