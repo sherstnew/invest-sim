@@ -69,13 +69,13 @@ def buy():
 def profile():
     global uname
     userpic = '/static/userpic.svg'
-    status = 'я люблю майнкрафт'
     username = uname
-    return render_template('/profile.html', userpic=userpic, status=status, username=username)
+    return render_template('/profile.html', userpic=userpic, username=username, accounts=accounts)
 
 
 @app.route('/reg', methods=['GET', 'POST'])
 def reg():
+
     global login
     global password2
     global password
@@ -88,13 +88,8 @@ def reg():
     uname = login
     if password == password2 and len(password) >= 6 and "@" in email and "." in email and login != "None" and len(
             login) >= 3:
-
-        sqle = f"""insert into  reg1 (name_id, email, password)
-        Values ("{login}","{email}","{password}"
-        )"""
         connection = sqlite3.connect('regist_db.db')
         cursor = connection.cursor()
-        cursor.execute(sqle)
         cvb = """select * from reg1"""
         cursor.execute(cvb)
         cursor.fetchall()
@@ -126,6 +121,13 @@ def reg():
                 else:
                     num = 5
 
+
+        sqle = f"""insert into  reg1 (token, login, email, password)
+        Values ("{token_new}", "{login}","{email}","{password}"
+        )"""
+        cursor.execute(sqle)
+
+
         for n in range(1):
             email_url = ''
             for i in range(20):
@@ -134,11 +136,6 @@ def reg():
         email_url = '/' + email_url
 
         email_confirm = 'http://127.0.0.1:5000/' + email_url
-
-        @app.route(email_url, methods=['GET', 'POST'])
-        def email_no():
-            return('email confirmed')
-
         connection.commit()
         cursor.close()
         connection.close()
@@ -198,14 +195,6 @@ def settings():
         uname = unamenew
         print(uname)
         unamenew = ''
-        # редактировать ник
-        # if username == login:
-        #     c=""""UPDATE reg1
-        #     SET name_id = uname
-        #     Where name_id == login
-        #     """
-        #     cursor.execute(c)
-        #     connection.commit()
 
     if passw != passwnew and passwnew != 'None':
         passw = passwnew
