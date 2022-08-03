@@ -1,7 +1,5 @@
 let accounts = '{{accounts}}'
-accounts = accounts.replaceAll('(', '')
-accounts = accounts.replaceAll(')', '')
-accounts = accounts.replaceAll('&#39;', '')
+accounts = accounts.replaceAll('(', '').replaceAll(')', '').replaceAll('&#39;', '')
 accounts = accounts.split(';')
 accounts.pop()
 
@@ -9,7 +7,7 @@ let token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*
 
 accounts.forEach(acc => {
     acc = acc.split(',')
-    if (token == '') {
-        location = '/reg'
+    if (acc[0].replaceAll(' ', '') == token) {
+            username.innerHTML = acc[1].replaceAll(' ', '')
     }
 });

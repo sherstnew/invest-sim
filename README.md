@@ -2,20 +2,19 @@
 
 
 
-## Клонировать:
+## Clone:
 
-Чтобы клонировать репозиторий, ссылка: https://git.jetbrains.space/inv/inv/inv.git
+```
+git clone https://github.com/sherstnew/invest-sim
+```
 
 ## Prerequisites
-
-Что надо установить перед запуском:
 
 ```
 pip install flask
 ```
-Желательно использовать virtual enviroment, однако, как показала практика, это не обязательно. 
-
-## Разрабатыватели
+Good to use Virtual Enviroment.
+## Developers
 sherstnew
-
 locaterman
+ivan

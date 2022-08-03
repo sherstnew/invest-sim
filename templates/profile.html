@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Профиль</title>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
       <link rel="stylesheet" href="/static/styles/styleprofile.css">
       <link rel="stylesheet" href="/static/styles/menu.css">
       <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
@@ -33,9 +32,11 @@
     <div class="container">
 <img src="{{userpic}}" class="userpic">
 <div class="userhead">
-    {{username}}
+  <span class="username">
+    имя
+  </span>
   <div class="status">
-    {{status}}
+    статус
   </div>
 </div>
 <a href="/settings">
@@ -58,5 +59,23 @@
 </a>
 <a href="/attr"><span class="attribute">Были использованы технологии и ресурсы</span></a>
     </div>
+    <script>
+      const username = document.querySelector('.username')
+      const status = document.querySelector('.status')
+//MAIN.PY ACCOUNTS=ACCOUNTS 
+      let accounts = '{{accounts}}'
+      accounts = accounts.replaceAll('(', '').replaceAll(')', '').replaceAll('&#39;', '')
+      accounts = accounts.split(';')
+      accounts.pop()
+
+      let token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+      accounts.forEach(acc => {
+          acc = acc.split(',')
+          if (acc[0].replaceAll(' ', '') == token) {
+            username.innerHTML = acc[1].replaceAll(' ', '')
+            status.innerHTML = acc[4].replaceAll(' ', '')
+          }
+      });
+    </script>
   </body>
 </html>
