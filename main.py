@@ -2,7 +2,13 @@ from flask import render_template, request, redirect, make_response
 from flask import Flask
 import sqlite3
 import json
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import array
+import random
 
+chars = 'abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
 login = ''
 uname = ''
 unamenew = ''
@@ -12,6 +18,7 @@ password2 = ''
 last_name = ''
 username = ''
 token = ''
+tokens = []
 app = Flask(__name__)
 
 accounts = ''
@@ -81,6 +88,7 @@ def reg():
     uname = login
     if password == password2 and len(password) >= 6 and "@" in email and "." in email and login != "None" and len(
             login) >= 3:
+
         sqle = f"""insert into  reg1 (name_id, email, password)
         Values ("{login}","{email}","{password}"
         )"""
@@ -93,10 +101,61 @@ def reg():
         rows = cursor.fetchall()
         for row in rows :
             print(row)
+
+        num = 0
+
+        result = cursor.execute("select token from reg1")
+        arr = result.fetchall()
+        tokens = [str(i[0]) for i in arr]
+
+        for n in range(1):
+            token_new = ''
+            for i in range(20):
+                token_new += random.choice(chars)
+
+        while num <= 1:
+            for i in tokens:
+                if i == token_new:
+                    result = cursor.execute("select token from reg1")
+                    arr = result.fetchall()
+                    tokens = [str(i[0]) for i in arr]
+                    for n in range(1):
+                        token_new = ''
+                        for i in range(20):
+                            token_new += random.choice(chars)
+                else:
+                    num = 5
+
+        for n in range(1):
+            email_url = ''
+            for i in range(20):
+                email_url += random.choice(chars)
+
+        email_url = '/' + email_url
+
+        email_confirm = 'http://127.0.0.1:5000/' + email_url
+
+        @app.route(email_url, methods=['GET', 'POST'])
+        def email_no():
+            return('email confirmed')
+
         connection.commit()
         cursor.close()
         connection.close()
-        global token
+
+        email = str(email)
+        msg = MIMEMultipart()
+        msg['From'] = 'investmentsimulator@yandex.ru'
+        msg['To'] = email
+        msg['Subject'] = 'Please, confim your e-mail'
+        message = email_confirm
+        msg.attach(MIMEText(message, 'plain'))
+        mailserver = smtplib.SMTP_SSL('smtp.yandex.com', 465)
+        mailserver.ehlo()
+        mailserver.ehlo()
+        mailserver.login('investmentsimulator@yandex.ru', 'tiefsgvtcfkwdeos')
+        mailserver.sendmail(msg['From'], msg['To'], msg.as_string())
+        mailserver.quit()
 
     return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
 
