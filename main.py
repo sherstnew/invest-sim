@@ -156,8 +156,9 @@ def reg():
 </body>
 </html>"""
         msg.attach(MIMEText(message, 'html', "utf-8"))
-        mailserver = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        mailserver = smtplib.SMTP('smtp.gmail.com', 587)
         mailserver.ehlo()
+        mailserver.starttls()
         mailserver.ehlo()
         mailserver.login('imulatorinvestmentments@gmail.com', 'vsxhnfdwgukosojk') # для яндекса использовать пароль peabnlvsbxgqxlza для гугл vsxhnfdwgukosojk
         mailserver.sendmail('imulatorinvestmentments@gmail.com', email, msg.as_string())
