@@ -5,7 +5,6 @@ import json
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import array
 import random
 
 chars = 'abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
@@ -142,16 +141,27 @@ def reg():
 
         email = str(email)
         msg = MIMEMultipart()
-        msg['From'] = 'investmentsimulator@yandex.ru'
+        msg['From'] = 'Invest Simulator'
         msg['To'] = email
         msg['Subject'] = 'Please, confim your e-mail'
-        message = email_confirm
-        msg.attach(MIMEText(message, 'plain'))
-        mailserver = smtplib.SMTP_SSL('smtp.yandex.com', 465)
+        message = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email</title>
+</head>
+<body>
+    <iframe src="http://127.0.0.1:5500/emailpage" frameborder="0"></iframe>
+</body>
+</html>"""
+        msg.attach(MIMEText(message, 'html', "utf-8"))
+        mailserver = smtplib.SMTP_SSL('smtp.gmail.com', 465)
         mailserver.ehlo()
         mailserver.ehlo()
-        mailserver.login('investmentsimulator@yandex.ru', 'tiefsgvtcfkwdeos')
-        mailserver.sendmail(msg['From'], msg['To'], msg.as_string())
+        mailserver.login('simulatorinvestment@gmail.com', 'tlzwejexxoayhigg') # для яндекса использовать пароль peabnlvsbxgqxlza для гугл tlzwejexxoayhigg
+        mailserver.sendmail('simulatorinvestment@gmail.com', email, msg.as_string())
         mailserver.quit()
 
     return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
