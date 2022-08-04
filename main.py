@@ -88,12 +88,6 @@ def reg():
             login) >= 3:
         connection = sqlite3.connect('regist_db.db')
         cursor = connection.cursor()
-        cvb = """select * from reg1"""
-        cursor.execute(cvb)
-        cursor.fetchall()
-        rows = cursor.fetchall()
-        for row in rows :
-            print(row)
 
         num = 0
 
@@ -120,11 +114,11 @@ def reg():
                     num = 5
 
 
-        sqle = f"""insert into  reg1 (token, login, email, password)
-        Values ("{token_new}", "{login}","{email}","{password}"
-        )"""
-        cursor.execute("""select * from reg1""")
-
+        # sqle = f"""insert into  reg1 (token, name_id, email, password)
+        # Values ("{token_new}", "{login}","{email}","{password}"
+        # )"""
+        # cursor.execute(sqle)
+    #база заблочена, пофиксить
 
         for n in range(1):
             email_url = ''
@@ -143,18 +137,51 @@ def reg():
         msg['From'] = 'Invest Simulator'
         msg['To'] = email
         msg['Subject'] = 'Please, confim your e-mail'
-        message = """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>email</title>
-</head>
-<body>
-    <iframe src="http://127.0.0.1:5500/emailpage" frameborder="0"></iframe>
-</body>
-</html>"""
+        message = """    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+        <title>Email</title>
+    </head>
+    <body style="font-family: 'Montserrat', sans-serif;
+                margin: 0;
+                padding: 0;">
+    <div class="container" style="width: 1000px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;">
+        <div class="desc" style="font-size: 20px;
+                width: 1000px;
+                color: black;
+                background: #fcbb4a;
+                padding: 30px;
+                border-radius: 20px;">
+            <img src="http://shite.rf.gd/valeraicon.png" alt="logo" class="logo" style="width: 75px;
+                height: 75px;
+                margin: 0px 0px 30px 0px;">
+            <a href=""" + email_confirm + """ style="text-decoration: none; color: black;">
+            <div class="conf-btn" style="font-size: 25px;
+                width: 300px;
+                background: #fffbff;
+                border-radius: 20px;
+                margin-top: 30px;
+                text-align: center;
+                padding: 20px;">Подтвердить</div>
+            </a>
+            <br><br>
+            <span class="up-desc">Здравствуйте, """ + login + """, чтобы пользоваться нашими услугами осталось только подтвердить вашу электронную почту. Чтобы подтвердить почту нажмите на кнопку выше или перейдите по ссылке: """ + email_confirm + """</span>
+            <br><br>
+            <span class="alert">Если это были не вы, проигнорируйте данное письмо</span>
+            <br><br>
+            <span class="und-desc" style="color: grey;
+                font-size: 15px;">Данное письмо формируется автоматически, пожалуйста, не отвечайте на него </span>
+        </div>
+    </div>
+    </body>
+    </html>"""
         msg.attach(MIMEText(message, 'html', "utf-8"))
         mailserver = smtplib.SMTP('smtp.gmail.com', 587)
         mailserver.ehlo()
