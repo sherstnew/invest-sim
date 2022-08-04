@@ -125,8 +125,6 @@ def reg():
             for i in range(20):
                 email_url += random.choice(chars)
 
-        email_url = '/' + email_url
-
         email_confirm = 'http://127.0.0.1:5000/' + email_url
         connection.commit()
         cursor.close()
@@ -190,8 +188,6 @@ def reg():
         mailserver.login('imulatorinvestmentments@gmail.com', 'vsxhnfdwgukosojk') # для яндекса использовать пароль peabnlvsbxgqxlza для гугл vsxhnfdwgukosojk
         mailserver.sendmail('imulatorinvestmentments@gmail.com', email, msg.as_string())
         mailserver.quit()
-
-        emailpage()
 
     return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
 
@@ -267,9 +263,6 @@ def plan():
 @app.route('/attr', methods=['GET', 'POST'])
 def attr():
     return render_template('/attr.html')
-@app.route('/emailpage', methods=['GET', 'POST'])
-def emailpage():
-    return render_template('/emailpage.html', login=login, email_confirm=email_confirm)
 
 
 app.run()
