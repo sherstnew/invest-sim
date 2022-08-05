@@ -29,53 +29,64 @@
       </div>
     </a>
   </div>
-    <div class="container">
-<img src="{{userpic}}" class="userpic">
-<div class="userhead">
-  <span class="username">
-    имя
-  </span>
-  <div class="status">
-    статус
-  </div>
-</div>
-<a href="/settings">
-<div class="settings">
-  <i class="uil uil-setting"></i>
-<span class="settext">Настройки</span>
-</div>
-</a>
-<a href="/history">
-<div class="history">
-  <i class="uil uil-history"></i>
-  <span class="histtext">История операций</span>
-</div>
-</a>
-<a href="/plan">
-  <div class="plan">
-    <i class="uil uil-clipboard-notes"></i>
-    <span class="plantext">Тариф</span>
-  </div>
-</a>
-<a href="/attr"><span class="attribute">Были использованы технологии и ресурсы</span></a>
+<div class="container">
+  <div class="pr-header">
+    <img src="{{userpic}}" class="userpic">
+      <div class="userdata">
+        <div class="username">
+          имя
+        </div>
+        <div class="status">
+          статус
+        </div>
+      </div>
     </div>
+    <div class="pr-btns">
+        <a href="/settings">
+        <div class="settings">
+          <i class="uil uil-setting"></i>
+        <span class="settext">Настройки</span>
+        </div>
+        </a>
+        <a href="/history">
+        <div class="history">
+          <i class="uil uil-history"></i>
+          <span class="histtext">История операций</span>
+        </div>
+        </a>
+        <a href="/plan">
+          <div class="plan">
+            <i class="uil uil-clipboard-notes"></i>
+            <span class="plantext">Тариф</span>
+          </div>
+        </a>
+        <div class="exit-btn">Выйти</div>
+        <a href="/attr"><div class="attribute">Были использованы технологии и ресурсы</div></a>
+      </div>
+</div>
     <script>
       const username = document.querySelector('.username')
       const status = document.querySelector('.status')
-//MAIN.PY ACCOUNTS=ACCOUNTS 
+      const exit_btn = document.querySelector('.exit-btn')
       let accounts = '{{accounts}}'
       accounts = accounts.replaceAll('(', '').replaceAll(')', '').replaceAll('&#39;', '')
       accounts = accounts.split(';')
       accounts.pop()
 
       let token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1")
-      accounts.forEach(acc => {
-          acc = acc.split(',')
-          if (acc[0].replaceAll(' ', '') == token) {
-            username.innerHTML = acc[1].replaceAll(' ', '')
-            status.innerHTML = acc[4].replaceAll(' ', '')
-          }
-      });
+      // accounts.forEach(acc => {
+      //     acc = acc.split(',')
+      //     if (acc[0].replaceAll(' ', '') == token) {
+      //       username.innerHTML = acc[1].replaceAll(' ', '')
+      //       status.innerHTML = acc[4].replaceAll(' ', '')
+      //     }
+      // });
+      exit_btn.addEventListener('click', () => {
+        const xhr = new XMLHttpRequest()
+        xhr.open('POST', '/profile', true)
+        xhr.send()
+        location = '/'
+      })
     </script>
   </body>
 </html>

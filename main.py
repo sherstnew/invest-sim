@@ -1,3 +1,4 @@
+#117 строка СРОЧНЫЙ ФИКС!!!
 from flask import render_template, request, redirect, make_response
 from flask import Flask
 import sqlite3
@@ -65,10 +66,12 @@ def buy():
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
-    global uname
     userpic = '/static/userpic.svg'
-    username = uname
-    return render_template('/profile.html', userpic=userpic, username=username, accounts=accounts)
+    if request.method == 'POST':
+        resp = make_response(redirect('/', 302))
+        resp.set_cookie('token', '')
+        return resp
+    return render_template('/profile.html', userpic=userpic, accounts=accounts)
 
 
 @app.route('/reg', methods=['GET', 'POST'])
@@ -118,7 +121,7 @@ def reg():
         # Values ("{token_new}", "{login}","{email}","{password}"
         # )"""
         # cursor.execute(sqle)
-    #база заблочена, пофиксить
+        #база заблочена, пофиксить
 
         for n in range(1):
             email_url = ''
@@ -189,7 +192,11 @@ def reg():
         mailserver.sendmail('imulatorinvestmentments@gmail.com', email, msg.as_string())
         mailserver.quit()
 
-    return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
+        resp = make_response(redirect('/', 302))
+        resp.set_cookie('token', token_new)
+        return resp
+    else:
+        return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

@@ -18,18 +18,12 @@
 </div>
 <br>
 <form method="POST" name="regform">
-    <ul class="error">
-        <li class="loginerr"></li>
-        <li class="emailerr"></li>
-        <li class="passerr"></li>
-        <li class="comperr"></li>
-    </ul>
 <input type="email" name="email" class="emaillog" placeholder="Введите E-Mail">
 <br>
 <input type="password" name="password" class="passwordlog" placeholder="Введите пароль">
 <br>
-<input type="button" name="subreg" class="sublog" value=" ">
-
+<input type="button" name="subreg" class="sublog" value=" " id="sublog">
+<label for="sublog"><i class="uil uil-sign-in-alt"></i></label>
 </form>
 </div>
 
@@ -56,8 +50,6 @@ let email
 let password
 
 const sub = document.querySelector('.sublog')
-const errorList = document.querySelector('.error')
-errorList.style.opacity = 0
 const reg_btn = document.querySelector('.regbut')
 
 const emailform = document.querySelector('.emaillog')

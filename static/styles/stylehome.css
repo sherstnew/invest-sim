@@ -3,7 +3,7 @@ input[type="submit"] {
     font-size: 20px;
 }
 .container {
-  position: fixed;
+  position: absolute;
   left: 20%;
   transform: translate(-20%);
 }
@@ -120,7 +120,7 @@ left: 150px;
   position: absolute;
   top: -10px;
   left: -380px;
-  width: 500vh;
+  width: 100vw;
   height: 600px;
   background-image: url("/static/bginc.png");
   background-repeat: no-repeat;
@@ -130,8 +130,6 @@ left: 150px;
 .stock {
   position: absolute;
   top: 650px;
-  width: 1000vh;
-  height: 1000vh;
   right: 1px;
 }
  /* lines */
