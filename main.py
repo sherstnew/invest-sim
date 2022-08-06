@@ -21,6 +21,7 @@ token = ''
 tokens = []
 email_confirm = ''
 accounts = ''
+email_url = ''
 connection = sqlite3.connect('regist_db.db')
 cursor = connection.cursor()
 cursor.execute("""select * from reg1""")
@@ -52,7 +53,6 @@ def index():
         perinc = "15"
     return render_template('/home.html', ic1=ic1, ic2=ic2, ic3=ic3, ic4=ic4, income=income, perinc=perinc,
                            userpic=userpic, timebut=timebut, accounts = accounts)
-
 
 @app.route('/buy', methods=['GET', 'POST'])
 def buy():
@@ -128,7 +128,7 @@ def reg():
             for i in range(20):
                 email_url += random.choice(chars)
 
-        email_confirm = 'http://127.0.0.1:5000/' + email_url
+        email_confirm = 'http://127.0.0.1:5000/emailconfirm' + '?' + 'key=' + email_url
         connection.commit()
         cursor.close()
         connection.close()
@@ -196,6 +196,13 @@ def reg():
         return resp
     else:
         return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
+
+@app.route('/emailconfirm', methods=['GET', 'POST'])
+def emailpage():
+    key = request.args['key']
+    
+    return render_template('/emailconfirm.html')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
