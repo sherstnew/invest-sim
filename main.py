@@ -1,3 +1,4 @@
+from ast import Try
 from flask import render_template, request, redirect, make_response
 from flask import Flask
 import sqlite3
@@ -202,20 +203,34 @@ def reg():
 
 @app.route('/emailconfirm', methods=['GET', 'POST'])
 def emailpage():
-    key = request.args['key']
-    connection = sqlite3.connect('regist_db.db')
-    cursor = connection.cursor()
-    key = "'" + key + "'"
-    print(key)
-    cursor.execute("""select token from reg1 where email_key=""" + key)
-    rows = cursor.fetchall()
+    try:
+        key = request.args['key']
+    except:
+        return render_template('/emailconfirm.html')
+    if key != '':
+        connection = sqlite3.connect('regist_db.db')
+        cursor = connection.cursor()
+        key = "'" + key + "'"
+        cursor.execute("""select token from reg1 where email_key=""" + key)
+        rows = cursor.fetchall()
 
-    for row in rows:
-        print(row)
-    connection.commit()
-    cursor.close()
-    connection.close()
-    return render_template('/emailconfirm.html')
+        for row in rows:
+            key = row
+
+        key = str(key)
+        key = key.replace('(', '')
+        key = key.replace(')', '')
+        key = key.replace(',', '')
+        key = key.replace("'", "")
+
+        resp = make_response(redirect('/emailconfirm', 302))
+        resp.set_cookie('token', key)
+        connection.commit()
+        cursor.close()
+        connection.close()
+        return resp
+    else:
+        return render_template('/emailconfirm.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
