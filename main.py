@@ -225,6 +225,8 @@ def emailpage():
 
         resp = make_response(redirect('/emailconfirm', 302))
         resp.set_cookie('token', key)
+        sqle = f"""insert into  reg1 (email_confirm) Values (true)"""
+        cursor.execute(sqle)
         connection.commit()
         cursor.close()
         connection.close()
