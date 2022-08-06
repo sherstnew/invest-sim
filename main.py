@@ -1,4 +1,3 @@
-#117 строка СРОЧНЫЙ ФИКС!!!
 from flask import render_template, request, redirect, make_response
 from flask import Flask
 import sqlite3
@@ -7,6 +6,11 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import random
+from flask import Flask,send_from_directory
+import os
+application=Flask(__name__)
+
+
 
 chars = 'abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
 login = ''
@@ -33,6 +37,9 @@ cursor.close()
 connection.close()
 app = Flask(__name__)
 
+
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     timebut = "day"
@@ -52,7 +59,7 @@ def index():
         timebut = "за день"
         perinc = "15"
     return render_template('/home.html', ic1=ic1, ic2=ic2, ic3=ic3, ic4=ic4, income=income, perinc=perinc,
-                           userpic=userpic, timebut=timebut, accounts = accounts)
+                           userpic=userpic, timebut=timebut, accounts=accounts)
 
 @app.route('/buy', methods=['GET', 'POST'])
 def buy():
@@ -88,7 +95,7 @@ def reg():
     email = str(request.form.get('email'))
     uname = login
     if password == password2 and len(password) >= 6 and "@" in email and "." in email and login != "None" and len(
-            login) >= 3:
+            login) >= 3 or request.method == 'POST':
         connection = sqlite3.connect('regist_db.db')
         cursor = connection.cursor()
 
@@ -117,11 +124,6 @@ def reg():
                     num = 5
 
 
-        # sqle = f"""insert into  reg1 (token, name_id, email, password)
-        # Values ("{token_new}", "{login}","{email}","{password}"
-        # )"""
-        # cursor.execute(sqle)
-        #база заблочена, пофиксить
 
         for n in range(1):
             email_url = ''
@@ -190,17 +192,25 @@ def reg():
         mailserver.login('simulatorinvestment@gmail.com', 'gjhwrskytmcqzqlk') # для яндекса использовать пароль aagajxrvrwkznihm для гугл gjhwrskytmcqzqlk
         mailserver.sendmail('simulatorinvestment@gmail.com', email, msg.as_string())
         mailserver.quit()
-
-        resp = make_response(redirect('/', 302))
-        resp.set_cookie('token', token_new)
-        return resp
+        return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
     else:
         return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
 
 @app.route('/emailconfirm', methods=['GET', 'POST'])
 def emailpage():
     key = request.args['key']
-    
+    connection = sqlite3.connect('regist_db.db')
+    cursor = connection.cursor()
+    key = "'" + key + "'"
+    print(key)
+    cursor.execute("""select token from reg1 where email_key=""" + key)
+    rows = cursor.fetchall()
+
+    for row in rows:
+        print(row)
+    connection.commit()
+    cursor.close()
+    connection.close()
     return render_template('/emailconfirm.html')
 
 
