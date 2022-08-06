@@ -124,11 +124,15 @@ def reg():
                     num = 5
 
 
-
         for n in range(1):
             email_url = ''
             for i in range(20):
                 email_url += random.choice(chars)
+
+        sqle = f"""insert into  reg1 (token, name_id, email, password, email_key)
+        Values ("{token_new}", "{login}","{email}","{password}", "{email_url}"
+        )"""
+        cursor.execute(sqle)
 
         email_confirm = 'http://127.0.0.1:5000/emailconfirm' + '?' + 'key=' + email_url
         connection.commit()
