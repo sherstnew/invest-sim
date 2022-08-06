@@ -183,13 +183,12 @@ def reg():
     </div>
     </body>
     </html>"""
-        msg.attach(MIMEText(message, 'html', "utf-8"))
-        mailserver = smtplib.SMTP('smtp.gmail.com', 587)
+        msg.attach(MIMEText(message, 'html'))
+        mailserver = smtplib.SMTP_SSL('smtp.gmail.com', 465)
         mailserver.ehlo()
-        mailserver.starttls()
         mailserver.ehlo()
-        mailserver.login('imulatorinvestmentments@gmail.com', 'vsxhnfdwgukosojk') # для яндекса использовать пароль peabnlvsbxgqxlza для гугл vsxhnfdwgukosojk
-        mailserver.sendmail('imulatorinvestmentments@gmail.com', email, msg.as_string())
+        mailserver.login('simulatorinvestment@gmail.com', 'gjhwrskytmcqzqlk') # для яндекса использовать пароль aagajxrvrwkznihm для гугл gjhwrskytmcqzqlk
+        mailserver.sendmail('simulatorinvestment@gmail.com', email, msg.as_string())
         mailserver.quit()
 
         resp = make_response(redirect('/', 302))
