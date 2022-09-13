@@ -71,6 +71,7 @@ def buy():
         return redirect('/buy', code=302)
     return render_template('/buy.html')
 
+<<<<<<< HEAD
 @app.route('/act', methods=['GET', 'POST'])
 def buyact():
     # act_id = request.args['id']
@@ -79,6 +80,8 @@ def buyact():
         text = json.load(f)
 
     return 123
+=======
+>>>>>>> c6c79b55f36abf12f8a72f9cc28d744491478b18
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
