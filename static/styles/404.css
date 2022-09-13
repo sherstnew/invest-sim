@@ -1,0 +1,75 @@
+body {
+    background-color: #ffba43;
+    font-family: 'Montserrat', sans-serif;
+    color: #060000;
+}
+.page404 {
+    font-size: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.desc {
+    font-size: 25px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.uil.uil-no-entry {
+    font-size: 60px;
+    position: absolute;
+    top: 200px;
+    left: 600px;
+}
+.uil.uil-wheel-barrow {
+    font-size: 60px;
+    position: absolute;
+    top: 550px;
+    left: 650px;
+}
+.uil.uil-hard-hat {
+    font-size: 60px;
+    position: absolute;
+    top: 450px;
+    left: 700px;
+    transform: rotate(50deg);
+}
+.uil.uil-paint-tool {
+    font-size: 70px;
+    position: absolute;
+    top: 350px;
+    left: 340px;
+    transform: rotate(55deg);
+}
+.hole {
+    position: absolute;
+    top: 200px;
+    left: 350px;
+    width: 300px;
+    height: 300px;
+}
+.home {
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #fffbff;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%);
+    transition: 0.5s;
+}
+.home:hover {
+    transition: 0.5s;
+    box-shadow: -15px 15px 99px 1px rgba(249, 231, 175, 1);
+}
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    color: #060000;
+    font-size: 30px;
+}

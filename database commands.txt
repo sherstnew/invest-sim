@@ -1,0 +1,8 @@
+connection = sqlite3.connect('regist_db.db') - подключаемся к базе данных в нашем случае regist_db
+cursor = connection.cursor()
+cursor.execute("""select * from reg1""")- reg1 таблица , звёздочка нужна
+for row in rows :
+    print(row)-принтем необязательно
+connection.commit()-сохраняем
+cursor.close()-закрываем
+connection.close()-закрываем

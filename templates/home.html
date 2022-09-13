@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Домашняя страница</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/stylehome.css">
+    <link rel="stylesheet" href="/static/styles/menu.css">
+    <link rel="icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+  <body>
+    <div class="menu">
+      <a href="/">
+        <div class="menu_index">
+          <span class="menu_index_text">Главная</span>
+          <i class="uil uil-bag"></i>
+        </div>
+      </a>
+      <a href="/buy">
+        <div class="menu_buy">
+          <span class="menu_buy_text">Купить</span>
+          <i class="uil uil-credit-card"></i>
+        </div>
+      </a>
+      <a href="/profile">
+        <div class="menu_profile">
+          <span class="menu_profile_text">Профиль</span>
+          <i class="uil uil-user-circle"></i>
+        </div>
+      </a>
+        </div>
+    <div class="container">
+    <div class="incomes"></div>
+    <div class="header">
+      Портфель
+    </div>
+    <div class="balance">
+      <div class="headbalance">
+        Баланс
+        <i class="uil uil-angle-down"></i>
+        </div>
+      <div class="income">
+        <div class="income_num">
+          <br>
+          {{ic1}}
+          <br>
+          {{ic2}}
+          <br>
+          {{ic3}}
+          <br>
+          {{ic4}}
+          <br>
+        </div>
+        <br>
+        Акции
+        <br>
+        Валюта
+        <br>
+        Фонды
+        <br>
+        Облигации
+        <br>
+      </div>
+      <div class="footbalance">
+        Всего: {{income}}
+      </div></div>
+      <div class="perinc">
+        <i class="uil uil-suitcase-alt"></i>
+      <div class="pertext-1">
+        {{ perinc }}%
+      </div>
+        <form method="POST">
+          <input class="pertext-2" type="submit" name="timebut" id="timebut" value="{{timebut}}">
+        </form>
+    </div>
+    <div id="line_center"></div>
+  </div>
+    <div class="stock"></div>
+    <script>
+      let cookies = document.cookie
+      cookies = cookies.split(';')
+
+      let accounts = '{{accounts}}'
+      accounts = accounts.replaceAll('(', '')
+      accounts = accounts.replaceAll(')', '')
+      accounts = accounts.replaceAll('&#39;', '')
+      accounts = accounts.split(';')
+      accounts.pop()
+
+      let token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+
+      accounts.forEach(acc => {
+          acc = acc.split(',')
+          if (token == '') {
+              location = '/reg'
+          }
+      });
+    </script>
+  </body>
+</html>

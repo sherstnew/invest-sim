@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/menu.css">
+    <link rel="stylesheet" href="/static/styles/stylereg.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="contlog">
+<div class="header">
+  Вход
+</div>
+<div class="regbut">
+    Регистрация
+</div>
+<br>
+<form method="POST" name="regform">
+<input type="email" name="email" class="emaillog" placeholder="Введите E-Mail">
+<br>
+<input type="password" name="password" class="passwordlog" placeholder="Введите пароль">
+<br>
+<input type="button" name="subreg" class="sublog" value=" " id="sublog">
+<label for="sublog"><i class="uil uil-sign-in-alt"></i></label>
+</form>
+</div>
+
+<script>
+let cookies = document.cookie
+cookies = cookies.split(';')
+
+let accounts = '{{accounts}}'
+accounts = accounts.replaceAll('(', '').replaceAll(')', '').replaceAll('&#39;', '')
+accounts = accounts.split(';')
+accounts.pop()
+
+let token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+
+accounts.forEach(acc => {
+    acc = acc.split(',')
+    if (token != '' && token == acc[0]) {
+        location = '/'
+    }
+});
+
+
+let email
+let password
+
+const sub = document.querySelector('.sublog')
+const reg_btn = document.querySelector('.regbut')
+
+const emailform = document.querySelector('.emaillog')
+const passform = document.querySelector('.passwordlog')
+
+sub.addEventListener('click', ()=>{
+    email = emailform.value
+    password = passform.value
+        accounts.forEach( acc => {
+            acc = acc.split(',')
+            if (acc[2].replaceAll(' ', '') == email && acc[3].replaceAll(' ', '') == password) {
+                setTimeout(()=>{
+                    location = '/'
+                }, 1000)
+                sub.parentNode.submit()
+            }
+        })
+})
+reg_btn.addEventListener('click', ()=>{
+    location='/reg'
+})
+</script>
+</body>
+</html>

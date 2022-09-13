@@ -1,0 +1,28 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #ffba43;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 150px;
+    background: #fffbff;
+    border-radius: 15px;
+    padding: 50px;
+}
+.header {
+    font-size: 20px;
+    text-align: center;
+    color: black;
+}
+.uil.uil-check-circle {
+    color: black;
+    font-size: 60px;
+}
