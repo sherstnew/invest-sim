@@ -71,17 +71,17 @@ def buy():
         return redirect('/buy', code=302)
     return render_template('/buy.html')
 
-<<<<<<< HEAD
 @app.route('/act', methods=['GET', 'POST'])
 def buyact():
-    # act_id = request.args['id']
+    act_id = request.args['id']
 
     with open('static/shares.json', 'r', encoding='utf-8') as f:
         text = json.load(f)
 
-    return 123
-=======
->>>>>>> c6c79b55f36abf12f8a72f9cc28d744491478b18
+    act_name = text['name'][act_id]
+
+    return act_name
+
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
