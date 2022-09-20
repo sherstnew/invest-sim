@@ -80,7 +80,19 @@ def buyact():
 
     act_name = text['name'][act_id]
 
-    return act_name
+    # подставить
+
+    act_sector = 'Сектор1'
+    buy_cost = 13
+    sell_cost = 12
+    daily_cost = 20
+    buy_comission = 1
+    sell_comission = 1
+    buy_total = 12
+    sell_total = 12
+    lots = 100
+
+    return render_template('/act.html', act_name = act_name, act_sector = act_sector, buy_cost = buy_cost, sell_cost = sell_cost, daily_cost = daily_cost, buy_comission = buy_comission, sell_comission = sell_comission, buy_total = buy_total, sell_total = sell_total, lots = lots)
 
 
 @app.route('/profile', methods=['GET', 'POST'])

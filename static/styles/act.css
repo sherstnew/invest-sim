@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 200px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.h-name {
+    font-size: 32px;
+}
+
+.h-sector {
+    font-size: 20px;
+}
+
+.h-daily {
+    font-size: 20px;
+}
+
+.act-graph {
+    width: 800px;
+    height: 500px;
+    border-radius: 15px;
+    background: #ffcf6b;
+}
+
+.act-box {
+    display: flex;    
+    justify-content: flex-end;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+}
+
+.desc-name {
+    font-size: 30px;
+}
+
+.desc-desc {
+    margin-top: 10px;
+    text-align: end;
+    font-size: 20px;
+}
+
+.act-fin-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+    margin-top: 50px;
+}
+
+.act-buy-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100px;
+    height: 50px;
+    transition: 1s;
+}
+
+.act-sell-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100px;
+    height: 50px;
+    transition: 1s;
+}
+
+.buy-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    background: #fff;
+    margin-bottom: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.sell-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    background: #fff;
+    margin-bottom: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.buy-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 15px;
+    width: 200px;
+    height: 200px;
+}
+
+.sell-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 15px;
+    width: 200px;
+    height: 200px;
+}

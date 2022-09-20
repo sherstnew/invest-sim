@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/act.css">
+    <link rel="stylesheet" href="/static/styles/menu.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <title>{{act_name}}</title>
+</head>
+<body>
+<div class="menu">
+    <a href="/">
+        <div class="menu_index">
+            <span class="menu_index_text">Главная</span>
+            <i class="uil uil-bag"></i>
+        </div>
+    </a>
+    <a href="/buy">
+        <div class="menu_buy">
+            <span class="menu_buy_text">Купить</span>
+            <i class="uil uil-credit-card"></i>
+        </div>
+    </a>
+    <a href="/profile">
+        <div class="menu_profile">
+            <span class="menu_profile_text">Профиль</span>
+            <i class="uil uil-user-circle"></i>
+        </div>
+    </a>
+</div>
+<div class="container">
+    <div class="header">
+        <div class="h-name">{{act_name}}</div>
+        <div class="h-sector">Сектор: {{act_sector}}</div>
+        <div class="h-daily">За день: {{daily_cost}}₽</div>
+    </div>
+    <div class="content">
+        <div class="act-graph"></div>
+        <div class="act-box">
+            <div class="desc-name">{{act_name}}</div>
+            <div class="desc-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem dicta quam cumque minus voluptatem repudiandae ipsam porro possimus veniam minima ea, tempore impedit animi quod, rem maxime totam a temporibus.
+            Voluptate ad veritatis sapiente enim ut repellendus, at laboriosam aut vero nemo minus placeat, harum quidem fuga quibusdam saepe eum error cumque modi maxime rerum architecto dolore ullam sunt! Iure.</div>
+            <div class="act-fin-box">
+                <div class="act-buy-box">
+                    <div class="buy-btn">Покупка</div>
+                    <div class="buy-cost">{{buy_cost}}₽</div>
+                    <div class="buy-cont hide">
+                        <div class="buy-lots">Доступно к покупке {{lots}} лотов</div>
+                        <div class="buy-total">
+                            <div class="total-comission">Комиссия: {{buy_comission}}₽</div>
+                            <div class="total-total">Итого: {{buy_total}}₽</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="act-sell-box">
+                    <div class="sell-btn">Продажа</div>
+                    <div class="sell-cost">{{sell_cost}}₽</div>
+                    <div class="sell-daily-cost hide"></div>
+                    <div class="sell-cont hide">
+                        <div class="sell-lots">Доступно к покупке {{lots}} лотов</div>
+                        <div class="sell-total">
+                            <div class="total-comission">Комиссия: {{sell_comission}}₽</div>
+                            <div class="total-total">Итого: {{sell_total}}₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/scripts/act.js"></script>
+</body>
+</html>
