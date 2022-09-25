@@ -35,6 +35,7 @@
 <div class="header">здесь вы можете <br> купить или продать <br>акции.<br> и не только их.</div>
     <input type="text" class="search" placeholder="Поиск по бирже">
     <i class="uil uil-search"></i>
+    <a href="/profile" class="link-profile"><div class="profile-avatar"></div></a>
     <div class="last">
         <span class="last_text">История просмотров:</span>
      </div>
@@ -68,6 +69,30 @@ document.addEventListener('click', event => {
 })
 
 request.send();
+
+let account = ''
+let cookies = document.cookie
+cookies = cookies.split(';')
+
+let accounts = '{{accounts}}'
+accounts = accounts.replaceAll('(', '')
+accounts = accounts.replaceAll(')', '')
+accounts = accounts.replaceAll('&#39;', '')
+accounts = accounts.split(';')
+accounts.pop()
+
+let token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+
+accounts.forEach(acc => {
+    acc = acc.split(',')
+    if (token == '') {
+        location = '/reg'
+    } else if (parseInt(token) == acc[0]) {
+        account = acc
+    }
+})
+
+document.querySelector('.profile-avatar').innerHTML = account[1][1]
 </script>
 </body>
 </html>

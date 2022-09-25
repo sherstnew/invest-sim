@@ -64,6 +64,7 @@ body {
   border-radius: 15px;
   margin: 0px 0px -40px 200px;
   font-size: 20px;
+  user-select: none;
 }
 
 

@@ -8,12 +8,26 @@ input[type="submit"] {
   transform: translate(-20%);
 }
 .header {
+  display: flex;
+  justify-content: space-around;
+  width: 50vw;
   font-family: 'Montserrat', sans-serif;
   font-size: 70px;
   position: absolute;
   left: 60px;
   top: 70px;
   color: #060000;
+}
+.profile-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: #fffbff;
+  margin-left: 600px;
 }
 
 /* balance */

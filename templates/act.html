@@ -46,27 +46,36 @@
             Voluptate ad veritatis sapiente enim ut repellendus, at laboriosam aut vero nemo minus placeat, harum quidem fuga quibusdam saepe eum error cumque modi maxime rerum architecto dolore ullam sunt! Iure.</div>
             <div class="act-fin-box">
                 <div class="act-buy-box">
-                    <div class="buy-btn">Покупка</div>
+                    <div class="buy-open">Покупка</div>
                     <div class="buy-cost">{{buy_cost}}₽</div>
                     <div class="buy-cont hide">
+                        <div class="buy-cont-costs">
+                            <div class="buy-daily-cost">За день: {{daily_cost}}₽</div>
+                            <div class="buy-cont-cost">{{buy_cost}}₽</div>
+                        </div>
                         <div class="buy-lots">Доступно к покупке {{lots}} лотов</div>
                         <div class="buy-total">
                             <div class="total-comission">Комиссия: {{buy_comission}}₽</div>
                             <div class="total-total">Итого: {{buy_total}}₽</div>
                         </div>
                     </div>
+                    <div class="buy-btn hide">Купить</div>
                 </div>
                 <div class="act-sell-box">
-                    <div class="sell-btn">Продажа</div>
+                    <div class="sell-open">Продажа</div>
                     <div class="sell-cost">{{sell_cost}}₽</div>
-                    <div class="sell-daily-cost hide"></div>
                     <div class="sell-cont hide">
+                        <div class="sell-cont-costs">
+                            <div class="sell-daily-cost">За день: {{daily_cost}}₽</div>
+                            <div class="sell-cont-cost">{{sell_cost}}₽</div>
+                        </div>
                         <div class="sell-lots">Доступно к покупке {{lots}} лотов</div>
                         <div class="sell-total">
                             <div class="total-comission">Комиссия: {{sell_comission}}₽</div>
                             <div class="total-total">Итого: {{sell_total}}₽</div>
                         </div>
                     </div>
+                    <div class="sell-btn hide">Продать</div>
                 </div>
             </div>
         </div>

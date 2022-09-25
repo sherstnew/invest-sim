@@ -1,4 +1,5 @@
 from ast import Try
+import re
 from flask import render_template, request, redirect, make_response
 from flask import Flask
 import sqlite3
@@ -40,6 +41,13 @@ app = Flask(__name__)
 
 
 
+@app.route('/api',  methods=['GET', 'POST']) 
+def api(): 
+    if request.method == 'POST':
+        request.json['act_id']
+        return 'ok'
+
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -69,7 +77,7 @@ def buy():
     if actbuy != '' and actbuy != None:
         print(actbuy)
         return redirect('/buy', code=302)
-    return render_template('/buy.html')
+    return render_template('/buy.html', accounts=accounts)
 
 @app.route('/act', methods=['GET', 'POST'])
 def buyact():
@@ -274,6 +282,7 @@ def login():
             token = token.replace('(', '')
             token = token.replace(')', '')
             token = token.replace(',', '')
+            token = token.replace("'", "")
 
 
             resp = make_response(redirect('/', 302))
