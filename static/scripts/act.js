@@ -55,9 +55,25 @@ buy_btn.addEventListener('click', () => {
         cost: '',
         utoken: '',
     }
-    const act_id = searchString.get('act_id')
-    body.act_id = act_id
-    body.cost = buy_cost.innerHTML
+    body.act_id = searchString.get('id')
+    body.cost = buy_cost.innerHTML.replace('₽', '')
+    body.utoken = getCookie('token')
+    body = JSON.stringify(body)
+    xhr.setRequestHeader("Content-Type", "application/json")
+    xhr.send(body)
+})
+
+sell_btn.addEventListener('click', () => {
+    const xhr = new XMLHttpRequest()
+    xhr.open('POST', '/api', true)
+    let body = {
+        action: 'sell',
+        act_id: '',
+        cost: '',
+        utoken: '',
+    }
+    body.act_id = searchString.get('id')
+    body.cost = sell_cost.innerHTML.replace('₽', '')
     body.utoken = getCookie('token')
     body = JSON.stringify(body)
     xhr.setRequestHeader("Content-Type", "application/json")

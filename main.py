@@ -39,13 +39,50 @@ cursor.close()
 connection.close()
 app = Flask(__name__)
 
-
-
 @app.route('/api',  methods=['GET', 'POST']) 
 def api(): 
     if request.method == 'POST':
-        request.json['act_id']
-        return 'ok'
+
+        connection = sqlite3.connect('regist_db.db')
+        cursor = connection.cursor()
+
+        cursor.execute("select balance from fin where token=" + request.json['utoken'])
+
+        bal = int(cursor.fetchall()[0][0])
+        token = request.json['utoken']
+
+        with open('static/shares.json', 'r', encoding='utf-8') as f:
+            text = json.load(f)
+
+        if request.json['action'] == 'buy':
+            if bal >= int(request.json['cost']):
+                bal = bal - int(request.json['cost'])
+                cursor.execute("update fin set balance =" + str(bal) + " where token=" + token)
+                connection.commit()
+                cursor.close()
+                connection.close()
+                return 'ok'
+            else:
+                return 'not enough money'
+        elif request.json['action'] == 'sell':
+            bal = bal + int(request.json['cost'])
+            cursor.execute("update fin set balance =" + str(bal) + " where token=" + token)
+            connection.commit()
+            cursor.close()
+            connection.close()
+            return 'ok'
+
+        act_sector = 'Сектор1'
+        buy_cost = 13
+        sell_cost = 12
+        daily_cost = 20
+        buy_comission = 1
+        sell_comission = 1
+        buy_total = 12
+        sell_total = 12
+        lots = 100
+
+    return 'ok'
 
 
 
