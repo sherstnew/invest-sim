@@ -125,9 +125,7 @@ def buyact():
 
     act_name = text['name'][act_id]
 
-    # подставить
-
-    act_sector = 'Сектор1'
+    act_sector = text['sector'][act_id]
     buy_cost = 13
     sell_cost = 12
     daily_cost = 20

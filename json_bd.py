@@ -15,13 +15,13 @@ with Client(t) as cl:
         data = []
         for i in srs.instruments:
             shares_info = {
-                # 'currency': i.currency,
-                # 'sector': i.sector,
-                # 'country': i.country_of_risk_name,
-                # 'exchange': i.exchange,
-                # 'short': i.short_enabled_flag,
+                'currency': i.currency,
+                'sector': i.sector,
+                'country': i.country_of_risk_name,
+                'exchange': i.exchange,
+                'short': i.short_enabled_flag,
                 'name': i.name,
-                # 'ticker': i.ticker,
+                'ticker': i.ticker,
             }
 
             data.append(shares_info)
@@ -104,6 +104,5 @@ print(currencies)
 print(etfs)
 
 sg = shares.to_dict()
-with open("static/shares.json", "w") as file:
+with open("static/shares.json", "w", encoding='utf-8') as file:
     json.dump(sg, file, ensure_ascii=False)
-
