@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+input[type="submit"] {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-image: url("/static/bginc1.png");
+  background-repeat: no-repeat;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  width: 800px;
+  height: 600px;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  width: 50vw;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 70px;
+  color: #060000;
+}
+.container-incomes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 800px;
+}
+
+/* incomes */
+
+.incomes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 300px;
+}
+
+.i-m {
+  font-size: 20px;
+}
+
+.i-n {
+  font-size: 20px;
+}
+
+/* balance */
+
+.balance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  color: #060000;
+  background: linear-gradient(45deg, rgb(255, 238, 187), rgb(255, 248, 228, 0.7));
+  width: 300px;
+  height: 240px;
+  font-size: 20px;
+  box-shadow: -15px 15px 0px 1px rgba(249, 231, 175, 1);
+  transition: 0.5s;
+}
+.balance:hover {
+  transition: 0.5s;
+  box-shadow: -15px 15px 99px 1px rgba(249, 231, 175, 1);
+}
+.headbalance {
+  font-size: 26px;
+}
+
+.footbalance {
+  font-size: 23px;
+}
+
+/* percents income */
+
+.perinc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  color: #060000;
+  background: linear-gradient(45deg, rgb(255, 238, 187), rgb(255, 248, 228, 0.7));
+  width: 280px;
+  height: 240px;
+  font-size: 23px;
+  box-shadow: -15px 15px 0px 1px rgba(249, 231, 175, 1);
+  transition: 0.5s;
+}
+.perinc:hover {
+  transition: 0.5s;
+  box-shadow: -15px 15px 99px 1px rgba(249, 231, 175, 1);
+}
+.perinc-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-evenly;
+  width: 100px;
+  height: 100px;
+}
+.perchange-btn {
+  user-select: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: underline 2px;
+  color: #464541;
+  transition: 0.5s;
+  font-size: 23px;
+}
+.perchange-btn:hover {
+  transition: 0.5s;
+  transform: rotate(1deg);
+}
+.uil.uil-suitcase-alt {
+  font-size: 70px;
+  color: #060000;
+}

@@ -4,53 +4,110 @@
     <meta charset="utf-8">
     <title>Настройки</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="/static/styles/menu.css">
-    <link rel="stylesheet" href="/static/styles/stylesettings.css">
+    <link rel="stylesheet" href="/static/styles/settings.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
     <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
   </head>
-  <body>
-  <div class="menu">
-    <a href="/">
-      <div class="menu_index">
-        <span class="menu_index_text">Главная</span>
-        <i class="uil uil-bag"></i>
-      </div>
-    </a>
-    <a href="/buy">
-      <div class="menu_buy">
-        <span class="menu_buy_text">Купить</span>
-        <i class="uil uil-credit-card"></i>
-      </div>
-    </a>
-    <a href="/profile">
-      <div class="menu_profile">
-        <span class="menu_profile_text">Профиль</span>
-        <i class="uil uil-user-circle"></i>
-      </div>
-    </a>
-  </div>
-    <div class="container">
-<span class="hello">Привет, !</span>
-<img src="{{userpic}}" class="userpic">
-<form name="settings" method="POST">
-<input type="text" name="uname" value="{{uname}}" class="uname" placeholder="Редактировать имя">
-<input type="password" name="pass" value="{{passw}}" class="pass" placeholder="Редактировать пароль" >
-<input type="email" name="email" value="{{email}}" class="email" placeholder="Редактировать E-Mail" >
-</form>
- <ul class="edit">
-   <li><i class="uil uil-edit-alt"></i></li>
-   <li><i class="uil uil-edit-alt"></i></li>
-   <li><i class="uil uil-edit-alt"></i></li>
- </ul>
-      <i onclick="submit()" class="uil uil-check"></i>
+<body>
+<div class="menu">
+      <a href="/">
+        <div class="menu_index">
+          <span class="menu_index_text">Главная</span>
+          <i class="uil uil-bag"></i>
+        </div>
+      </a>
+      <a href="/buy">
+        <div class="menu_buy">
+          <span class="menu_buy_text">Купить</span>
+          <i class="uil uil-credit-card"></i>
+        </div>
+      </a>
+      <a href="/profile">
+        <div class="menu_profile">
+          <span class="menu_profile_text">Профиль</span>
+          <i class="uil uil-user-circle"></i>
+        </div>
+      </a>
+</div>
+<div class="container">
+<div class="settings">
+    <div class="side-l">
+      <div class="text-greetings">Привет!</div>
+      <input type="text" class="change-name" placeholder="Введите новое имя">
+      <input type="password" class="change-password" placeholder="Введите новый пароль">
+      <input type="email" class="change-email" placeholder="Введите новый e-mail">
     </div>
-    <script type="text/javascript">
-      function submit() {
-        let form = document.querySelector('form')
-          form.submit()
-        }
-    </script>
-  </body>
+    <div class="side-r">
+      <div class="save-btn">
+        <i class="uil uil-save"></i>
+      </div>
+    </div>
+</div>
+</div>
+<script>
+const input_name = document.querySelector('.change-name')
+const input_password = document.querySelector('.change-password')
+const input_email = document.querySelector('.change-email')
+const save_btn = document.querySelector('.save-btn')
+let account = ''
+let accounts = ''
+let token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+
+const xhr = new XMLHttpRequest()
+xhr.open('POST', '/api', true)
+let body = {
+    action: 'accounts'
+}
+body = JSON.stringify(body)
+xhr.setRequestHeader('Content-Type', 'application/json')
+xhr.send(body)
+
+xhr.onload = () => {
+    if (xhr.status == '200') {
+        accounts = JSON.parse(xhr.response).accounts
+        accounts = accounts.replaceAll('(', '')
+        accounts = accounts.replaceAll(')', '')
+        accounts = accounts.replaceAll("'", '')
+        accounts = accounts.replaceAll(' ', '')
+        accounts = accounts.replaceAll('&#39;', '')
+        accounts = accounts.split(';')
+        accounts.pop()
+        accounts.forEach(acc => {
+            acc = acc.split(',')
+            acc[0] = acc[0].replaceAll("'", "")
+            if (token == '') {
+                location = '/reg'
+            } else if (token == acc[0]) {
+                account = acc
+            }
+        })
+    }
+    document.querySelector('.text-greetings').innerHTML = 'Привет, ' + account[1] + '!'
+    input_name.value = account[1]
+    input_password.value = account[3]
+    input_email.value = account[2]
+}
+
+save_btn.addEventListener('click', () => {
+    const changes = new XMLHttpRequest()
+    changes.open('POST', '/api', true)
+    let body = {
+      action: "",
+      utoken: "",
+      name: "",
+      password: "",
+      email: ""
+    }
+    body.action = 'changes'
+    body.utoken = token
+    body.name = input_name.value
+    body.password = input_password.value
+    body.email = input_email.value
+    body = JSON.stringify(body)
+    changes.setRequestHeader('Content-Type', 'application/json')
+    changes.send(body)
+})
+</script>
+</body>
 </html>

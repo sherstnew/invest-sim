@@ -55,6 +55,7 @@ body {
 }
 
 .desc-name {
+    text-align: end;
     font-size: 30px;
 }
 

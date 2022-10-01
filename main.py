@@ -1,4 +1,5 @@
 from ast import Try
+from cmath import log
 import re
 from flask import render_template, request, redirect, make_response
 from flask import Flask
@@ -10,6 +11,8 @@ from email.mime.text import MIMEText
 import random
 from flask import Flask,send_from_directory
 import os
+from translate import Translator
+translator= Translator(to_lang="ru")
 application=Flask(__name__)
 
 
@@ -46,6 +49,26 @@ def api():
         connection = sqlite3.connect('regist_db.db')
         cursor = connection.cursor()
 
+        if request.json['action'] == 'accounts':
+            accs = {
+                "accounts": ""
+            }
+            accs['accounts'] = accounts
+            accs = json.dumps(accs)
+            return accs
+        elif request.json['action'] == 'changes':
+            cursor.execute("update reg1 set name_id='" + request.json['name']  + "', password='" + request.json['password'] +"', email='" + request.json['email'] + "' where token=" + request.json['utoken'])
+            connection.commit()
+            cursor.close()
+            connection.close()
+            return 'OK'
+        elif request.json['action'] == 'pday':
+            pday = '10%'
+            return pday
+        elif request.json['action'] == 'pyear':
+            pyear = '20%'
+            return pyear
+
         cursor.execute("select balance from fin where token=" + request.json['utoken'])
 
         bal = int(cursor.fetchall()[0][0])
@@ -54,33 +77,38 @@ def api():
         with open('static/shares.json', 'r', encoding='utf-8') as f:
             text = json.load(f)
 
+        cursor.execute("select shares from fin where token=" + token)
+        shares = json.loads(cursor.fetchall()[0][0])
+        if str(request.json['act_id']) not in shares:
+            shares[request.json['act_id']] = "0"
+
+        current_amount = int(shares[str(request.json['act_id'])])
+
         if request.json['action'] == 'buy':
             if bal >= int(request.json['cost']):
                 bal = bal - int(request.json['cost'])
+                current_amount+=1
+                shares[request.json['act_id']] = str(current_amount)
+                cursor.execute("update fin set shares ='" + json.dumps(shares) + "' where token=" + token)
                 cursor.execute("update fin set balance =" + str(bal) + " where token=" + token)
                 connection.commit()
                 cursor.close()
                 connection.close()
-                return 'ok'
+                return 'OK'
             else:
-                return 'not enough money'
-        elif request.json['action'] == 'sell':
+                return 'NO_MONEY'
+        elif request.json['action'] == 'sell' and current_amount > 0:
             bal = bal + int(request.json['cost'])
+            current_amount-=1
+            shares[request.json['act_id']] = str(current_amount)
+            cursor.execute("update fin set shares ='" + json.dumps(shares) + "' where token=" + token)
             cursor.execute("update fin set balance =" + str(bal) + " where token=" + token)
             connection.commit()
             cursor.close()
             connection.close()
-            return 'ok'
-
-        act_sector = 'Сектор1'
-        buy_cost = 13
-        sell_cost = 12
-        daily_cost = 20
-        buy_comission = 1
-        sell_comission = 1
-        buy_total = 12
-        sell_total = 12
-        lots = 100
+            return 'OK'
+        else:
+            return('NO_SHARES')
 
     return 'ok'
 
@@ -88,24 +116,12 @@ def api():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    timebut = "day"
-    perinc = 15
     ic1 = 147
     ic2 = 138
     ic3 = 509
     ic4 = 287
     income = ic1 + ic2 + ic3 + ic4
-    userpic = 'userpic'
-    timebut = "за день"
-    timech = request.form.get('timebut')
-    if timech == "за день":
-        timebut = "за год"
-        perinc = "-3"
-    elif timech == "за год":
-        timebut = "за день"
-        perinc = "15"
-    return render_template('/home.html', ic1=ic1, ic2=ic2, ic3=ic3, ic4=ic4, income=income, perinc=perinc,
-                           userpic=userpic, timebut=timebut, accounts=accounts)
+    return render_template('/home.html', ic1=ic1, ic2=ic2, ic3=ic3, ic4=ic4, income=income, accounts=accounts)
 
 @app.route('/buy', methods=['GET', 'POST'])
 def buy():
@@ -126,6 +142,8 @@ def buyact():
     act_name = text['name'][act_id]
 
     act_sector = text['sector'][act_id]
+    act_sector = translator.translate(act_sector)
+    act_desc = act_name + ' is very good shares'
     buy_cost = 13
     sell_cost = 12
     daily_cost = 20
@@ -135,7 +153,8 @@ def buyact():
     sell_total = 12
     lots = 100
 
-    return render_template('/act.html', act_name = act_name, act_sector = act_sector, buy_cost = buy_cost, sell_cost = sell_cost, daily_cost = daily_cost, buy_comission = buy_comission, sell_comission = sell_comission, buy_total = buy_total, sell_total = sell_total, lots = lots)
+
+    return render_template('/act.html', act_name = act_name, act_desc = act_desc, act_sector = act_sector, buy_cost = buy_cost, sell_cost = sell_cost, daily_cost = daily_cost, buy_comission = buy_comission, sell_comission = sell_comission, buy_total = buy_total, sell_total = sell_total, lots = lots)
 
 
 @app.route('/profile', methods=['GET', 'POST'])
@@ -199,6 +218,9 @@ def reg():
         sqle = f"""insert into  reg1 (token, name_id, email, password, email_key)
         Values ("{token_new}", "{login}","{email}","{password}", "{email_url}"
         )"""
+        cursor.execute(sqle)
+
+        sqle = 'insert into  fin (token, balance, shares) Values ("' + token_new + ' ", 500, "{"0: "0"}")'
         cursor.execute(sqle)
 
         email_confirm = 'http://127.0.0.1:5000/emailconfirm' + '?' + 'key=' + email_url
