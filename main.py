@@ -122,12 +122,21 @@ def api():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    ic1 = 147
-    ic2 = 138
-    ic3 = 509
-    ic4 = 287
-    income = ic1 + ic2 + ic3 + ic4
-    return render_template('/home.html', ic1=ic1, ic2=ic2, ic3=ic3, ic4=ic4, income=income, accounts=accounts)
+    if request.cookies['token'] != '':
+        ic1 = 147
+        ic2 = 138
+        ic3 = 509
+        ic4 = 287
+        connection = sqlite3.connect('regist_db.db')
+        cursor = connection.cursor()
+        cursor.execute('select balance from fin where token=' + request.cookies['token'])
+        income = cursor.fetchall()[0][0]
+        connection.commit()
+        cursor.close()
+        connection.close()
+        return render_template('/home.html', ic1=ic1, ic2=ic2, ic3=ic3, ic4=ic4, income=income, accounts=accounts)
+    else:
+        return redirect('/login', 302)
 
 @app.route('/buy', methods=['GET', 'POST'])
 def buy():

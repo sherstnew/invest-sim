@@ -25,7 +25,7 @@ auth.onload = () => {
             acc = acc.split(',')
             acc[0] = acc[0].replaceAll("'", "")
             if (token == '') {
-                location = '/reg'
+                location = '/login'
             } else if (token == acc[0]) {
                 account = acc
             }
