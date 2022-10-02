@@ -55,11 +55,13 @@ body {
 }
 
 .desc-name {
+    width: 400px;
     text-align: end;
     font-size: 30px;
 }
 
 .desc-desc {
+    width: 400px;
     margin-top: 10px;
     text-align: end;
     font-size: 20px;

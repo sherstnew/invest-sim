@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.history-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 700px;
+}
+
+.history-el {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 800px;
+    height: 100px;
+    background: #fffbff;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.history-method, .history-name, .history-cost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}

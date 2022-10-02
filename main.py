@@ -68,6 +68,10 @@ def api():
         elif request.json['action'] == 'pyear':
             pyear = '20%'
             return pyear
+        elif request.json['action'] == 'history':
+            cursor.execute("select * from history where token=" + request.json['utoken'])
+            history = cursor.fetchall()
+            return history
 
         cursor.execute("select balance from fin where token=" + request.json['utoken'])
 
@@ -91,6 +95,7 @@ def api():
                 shares[request.json['act_id']] = str(current_amount)
                 cursor.execute("update fin set shares ='" + json.dumps(shares) + "' where token=" + token)
                 cursor.execute("update fin set balance =" + str(bal) + " where token=" + token)
+                cursor.execute("insert into history (token, method, act_id, cost) values (" + token + ", 'buy', '" + request.json['act_id'] + "', '" + request.json['cost'] + "')")
                 connection.commit()
                 cursor.close()
                 connection.close()
@@ -103,6 +108,7 @@ def api():
             shares[request.json['act_id']] = str(current_amount)
             cursor.execute("update fin set shares ='" + json.dumps(shares) + "' where token=" + token)
             cursor.execute("update fin set balance =" + str(bal) + " where token=" + token)
+            cursor.execute("insert into history (token, method, act_id, cost) values (" + token + ", 'sell', '" + request.json['act_id'] + "', '" + request.json['cost'] + "')")
             connection.commit()
             cursor.close()
             connection.close()
@@ -397,6 +403,9 @@ def plan():
 def attr():
     return render_template('/attr.html')
 
+@app.route('/history', methods=['GET', 'POST'])
+def history():
+    return render_template('/history.html')
 
 app.run()
 

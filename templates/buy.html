@@ -4,7 +4,6 @@
     <meta charset="1251">
     <title>Купить/продать</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/vue@next"></script>
     <link rel="stylesheet" href="/static/styles/menu.css">
     <link rel="stylesheet" href="/static/styles/stylebuy.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
@@ -44,6 +43,7 @@
 </div>
 <script>
 const actions_list = document.querySelector('.actions')
+const search = document.querySelector('.search')
 let DATA
 const request = new XMLHttpRequest();
 
@@ -53,19 +53,31 @@ request.onloadend = function() {
     DATA = JSON.parse(request.responseText);
     DATA = DATA.name
     DATA = Object.values(DATA)
-    for (let i = 0; i < DATA.length + 1; i++) {
+    renderList(DATA)
+}
+
+document.addEventListener('click', event => {
+    if (DATA.indexOf(event.target.innerHTML) != -1) {
+        location.href = '/act?id=' + DATA.indexOf(event.target.innerHTML)
+    }
+})
+
+search.addEventListener('input', () => {
+    filt = DATA.filter(share => share.indexOf(search.value) != -1)
+    renderList(filt)
+})
+
+const renderList = list => {
+    while (actions_list.firstChild) {
+        actions_list.removeChild(actions_list.firstChild);
+    }
+    for (let i = 0; i < list.length; i++) {
         const li = document.createElement('li')
-        li.innerHTML = DATA[i]
+        li.innerHTML = list[i]
         li.setAttribute('data-act-id', i)
         actions_list.appendChild(li)
     }
 }
-
-document.addEventListener('click', event => {
-    if (event.target.dataset.actId != undefined) {
-        location.href = '/act?id=' + event.target.dataset.actId
-    }
-})
 
 request.send();
 </script>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/history.css">
+    <link rel="stylesheet" href="/static/styles/menu.css">
+    <link rel="icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+<div class="menu">
+    <a href="/">
+        <div class="menu_index">
+        <span class="menu_index_text">Главная</span>
+        <i class="uil uil-bag"></i>
+        </div>
+    </a>
+    <a href="/buy">
+        <div class="menu_buy">
+        <span class="menu_buy_text">Купить</span>
+        <i class="uil uil-credit-card"></i>
+        </div>
+    </a>
+    <a href="/profile">
+        <div class="menu_profile">
+        <span class="menu_profile_text">Профиль</span>
+        <i class="uil uil-user-circle"></i>
+        </div>
+    </a>
+</div>
+<div class="container">
+    <div class="history-container">
+        
+    </div>
+</div>
+<script src="/static/scripts/auth.js"></script>
+<script>
+    const hist_cont = document.querySelector('.history-container')
+    const history = new XMLHttpRequest()
+    history.open('POST', '/api', true)
+    body = {
+        utoken: '',
+        action: 'history'
+    }
+    body.utoken = token
+    body = JSON.stringify(body)
+    history.setRequestHeader('Content-Type', 'application/json')
+    history.send(body)
+    history.onload = () => {
+        hist = JSON.parse(history.response)
+        hist = hist.reverse()
+        hist.forEach(el => {
+            const hist_el = document.createElement('div')
+            const hist_method = document.createElement('div')
+            const hist_name = document.createElement('div')
+            const hist_cost = document.createElement('div')
+            hist_el.classList.add('history-el')
+            hist_method.classList.add('history-method')
+            hist_name.classList.add('history-name')
+            hist_cost.classList.add('history-cost')
+            
+            if (el[1] == 'buy') {
+                hist_method.innerHTML = 'Покупка'
+                hist_cost.innerHTML = '-' + el[3] + '₽'
+            } else if (el[1] == 'sell') {
+                hist_method.innerHTML = 'Продажа'
+                hist_cost.innerHTML = '+' + el[3] + '₽'
+            }
+
+            let DATA
+            const shares = new XMLHttpRequest();
+
+            shares.open('GET', '/static/shares.json');
+
+            shares.onloadend = function() {
+                DATA = JSON.parse(shares.responseText)
+                DATA = DATA.name
+                DATA = Object.values(DATA)
+                hist_name.innerHTML = DATA[el[2]]
+                hist_el.appendChild(hist_method)
+                hist_el.appendChild(hist_name)
+                hist_el.appendChild(hist_cost)
+                hist_cont.appendChild(hist_el)                
+            }
+            shares.send()
+        })
+    }
+</script>
+</body>
+</html>

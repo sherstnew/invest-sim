@@ -1,83 +1,102 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Домашняя страница</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/styles/home.css">
-    <link rel="stylesheet" href="/static/styles/menu.css">
-    <link rel="icon" href="/static/favicon.ico">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  </head>
-  <body>
-    <div class="menu">
-      <a href="/">
-        <div class="menu_index">
-          <span class="menu_index_text">Главная</span>
-          <i class="uil uil-bag"></i>
-        </div>
-      </a>
-      <a href="/buy">
-        <div class="menu_buy">
-          <span class="menu_buy_text">Купить</span>
-          <i class="uil uil-credit-card"></i>
-        </div>
-      </a>
-      <a href="/profile">
-        <div class="menu_profile">
-          <span class="menu_profile_text">Профиль</span>
-          <i class="uil uil-user-circle"></i>
-        </div>
-      </a>
-        </div>
-    <div class="container">
-      <div class="header">
-        Портфель
+
+<head>
+  <meta charset="utf-8">
+  <title>Портфель</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles/home.css">
+  <link rel="stylesheet" href="/static/styles/menu.css">
+  <link rel="icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+  <div class="menu">
+    <a href="/">
+      <div class="menu_index">
+        <span class="menu_index_text">Главная</span>
+        <i class="uil uil-bag"></i>
       </div>
-<div class="container-incomes">
-        <div class="balance">
-          <div class="headbalance">
-            Баланс
-            </div>
-          <div class="incomes">
-            <div class="income-num">
-              <div class="income-1 i-m">{{ic1}}</div>
-              <div class="income-2 i-m">{{ic2}}</div>
-              <div class="income-3 i-m">{{ic3}}</div>
-              <div class="income-4 i-m">{{ic4}}</div>
-            </div>
-            <div class="income-name">
-              <div class="income-name-1 i-n">Акции</div>
-              <div class="income-name-2 i-n">Валюта</div>
-              <div class="income-name-3 i-n">Фонды</div>
-              <div class="income-name-4 i-n">Облигации</div>
-            </div>
-          </div>
-          <div class="footbalance">
-            Всего: {{income}}
-          </div>
-        </div>
-          <div class="perinc">
-            <div class="perinc-content">
-                <i class="uil uil-suitcase-alt"></i>
-              <div class="perinc-per">
-                0%
-              </div>
-                <div class="perchange-btn">за день</div>
-            </div>
-        </div>
-</div>
+    </a>
+    <a href="/buy">
+      <div class="menu_buy">
+        <span class="menu_buy_text">Купить</span>
+        <i class="uil uil-credit-card"></i>
+      </div>
+    </a>
+    <a href="/profile">
+      <div class="menu_profile">
+        <span class="menu_profile_text">Профиль</span>
+        <i class="uil uil-user-circle"></i>
+      </div>
+    </a>
   </div>
-    <script src="/static/scripts/auth.js"></script>
-    <script>
-      const perchange_btn = document.querySelector('.perchange-btn')
-      const percents = document.querySelector('.perinc-per')
-      const per = new XMLHttpRequest()
-      let state = 'year'
+  <div class="container">
+    <div class="header">
+      Портфель
+    </div>
+    <div class="container-incomes">
+      <div class="balance">
+        <div class="headbalance">
+          Баланс
+        </div>
+        <div class="incomes">
+          <div class="income-num">
+            <div class="income-1 i-m">{{ic1}}</div>
+            <div class="income-2 i-m">{{ic2}}</div>
+            <div class="income-3 i-m">{{ic3}}</div>
+            <div class="income-4 i-m">{{ic4}}</div>
+          </div>
+          <div class="income-name">
+            <div class="income-name-1 i-n">Акции</div>
+            <div class="income-name-2 i-n">Валюта</div>
+            <div class="income-name-3 i-n">Фонды</div>
+            <div class="income-name-4 i-n">Облигации</div>
+          </div>
+        </div>
+        <div class="footbalance">
+          Всего: {{income}}
+        </div>
+      </div>
+      <div class="perinc">
+        <div class="perinc-content">
+          <i class="uil uil-suitcase-alt"></i>
+          <div class="perinc-per">
+            0%
+          </div>
+          <div class="perchange-btn">за день</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/scripts/auth.js"></script>
+  <script>
+    const perchange_btn = document.querySelector('.perchange-btn')
+    const percents = document.querySelector('.perinc-per')
+    const per = new XMLHttpRequest()
+    let state = 'year'
+    per.open('POST', '/api', true)
+    per.setRequestHeader('Content-Type', 'application/json')
+    body = {
+      utoken: '',
+      action: ''
+    }
+    body.utoken = token
+    body.action = 'pday'
+    body = JSON.stringify(body)
+    per.send(body)
+    per.onload = () => {
+      perchange_btn.innerHTML = 'за год'
+      percents.innerHTML = per.response
+    }
+    perchange_btn.addEventListener('click', () => {
+      if (state == 'day') {
+        const per = new XMLHttpRequest()
         per.open('POST', '/api', true)
         per.setRequestHeader('Content-Type', 'application/json')
-        body = {
+        let body = {
           utoken: '',
           action: ''
         }
@@ -88,44 +107,28 @@
         per.onload = () => {
           perchange_btn.innerHTML = 'за год'
           percents.innerHTML = per.response
+          state = 'year'
         }
-      perchange_btn.addEventListener('click', () => {
-        if (state == 'day') {
-          const per = new XMLHttpRequest()
-          per.open('POST', '/api', true)
-          per.setRequestHeader('Content-Type', 'application/json')
-          let body = {
-            utoken: '',
-            action: ''
-          }
-          body.utoken = token
-          body.action = 'pday'
-          body = JSON.stringify(body)
-          per.send(body)
-          per.onload = () => {
-            perchange_btn.innerHTML = 'за год'
-            percents.innerHTML = per.response
-            state = 'year'
-          }
-        } else if (state == 'year') {
-          const per = new XMLHttpRequest()
-          per.open('POST', '/api', true)
-          per.setRequestHeader('Content-Type', 'application/json')
-          let body = {
-            utoken: '',
-            action: ''
-          }
-          body.utoken = token
-          body.action = 'pyear'
-          body = JSON.stringify(body)
-          per.send(body)
-          per.onload = () => {
-            perchange_btn.innerHTML = 'за день'
-            percents.innerHTML = per.response
-            state = 'day'
-          }
+      } else if (state == 'year') {
+        const per = new XMLHttpRequest()
+        per.open('POST', '/api', true)
+        per.setRequestHeader('Content-Type', 'application/json')
+        let body = {
+          utoken: '',
+          action: ''
         }
-      })
-    </script>
-  </body>
+        body.utoken = token
+        body.action = 'pyear'
+        body = JSON.stringify(body)
+        per.send(body)
+        per.onload = () => {
+          perchange_btn.innerHTML = 'за день'
+          percents.innerHTML = per.response
+          state = 'day'
+        }
+      }
+    })
+  </script>
+</body>
+
 </html>
