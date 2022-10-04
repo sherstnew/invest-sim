@@ -31,19 +31,27 @@
     </a>
 </div>
 <div class="container">
-<div class="header">здесь вы можете <br> купить или продать <br>акции.<br> и не только их.</div>
-    <input type="text" class="search" placeholder="Поиск по бирже">
-    <i class="uil uil-search"></i>
-    <div class="last">
-        <span class="last_text">История просмотров:</span>
-     </div>
-    <ul class="actions">
-    </ul>
+    <div class="top-container">
+        <div class="header">здесь вы можете <br> купить или продать <br>акции.<br> и не только их.</div>
+        <div class="search-hist">
+            <div class="search">
+                <input type="text" class="search-input" placeholder="Поиск по бирже">
+            </div>
+            <div class="last">
+                <span class="last_text">История просмотров:</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="shares-container">
+        <ul class="shares">
+        </ul>
+    </div>
 </div>
 </div>
 <script>
-const actions_list = document.querySelector('.actions')
-const search = document.querySelector('.search')
+const shares_list = document.querySelector('.shares')
+const search = document.querySelector('.search-input')
 let DATA
 const request = new XMLHttpRequest();
 
@@ -68,14 +76,14 @@ search.addEventListener('input', () => {
 })
 
 const renderList = list => {
-    while (actions_list.firstChild) {
-        actions_list.removeChild(actions_list.firstChild);
+    while (shares_list.firstChild) {
+        shares_list.removeChild(shares_list.firstChild);
     }
     for (let i = 0; i < list.length; i++) {
         const li = document.createElement('li')
         li.innerHTML = list[i]
         li.setAttribute('data-act-id', i)
-        actions_list.appendChild(li)
+        shares_list.appendChild(li)
     }
 }
 

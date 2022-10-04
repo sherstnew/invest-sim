@@ -42,8 +42,8 @@ cursor.close()
 connection.close()
 app = Flask(__name__)
 
-@app.route('/api',  methods=['GET', 'POST']) 
-def api(): 
+@app.route('/api',  methods=['GET', 'POST'])
+def api():
     if request.method == 'POST':
 
         connection = sqlite3.connect('regist_db.db')

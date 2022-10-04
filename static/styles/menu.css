@@ -12,6 +12,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #ffba43;
     color: #060000;
+    overflow-x: hidden;
 }
 .menu {
   z-index: 1;
