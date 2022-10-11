@@ -9,6 +9,8 @@ const sell_cont = document.querySelector('.sell-cont')
 const buy_cost = document.querySelector('.buy-cost')
 const sell_cost = document.querySelector('.sell-cost')
 
+const dialog_error = document.querySelector('.error')
+
 const searchString = new URLSearchParams(window.location.search);
 let buy_opened = false
 let sell_opened = false
@@ -61,6 +63,12 @@ buy_btn.addEventListener('click', () => {
     body = JSON.stringify(body)
     xhr.setRequestHeader("Content-Type", "application/json")
     xhr.send(body)
+    xhr.onload = () => {
+        if (xhr.response == 'NO_MONEY') {
+            dialog_error.innerHTML = 'Недостаточно средств. <br> Нажмите в любом месте для закрытия.'
+            dialog_error.showModal()
+        }
+    }
 })
 
 sell_btn.addEventListener('click', () => {
@@ -78,6 +86,12 @@ sell_btn.addEventListener('click', () => {
     body = JSON.stringify(body)
     xhr.setRequestHeader("Content-Type", "application/json")
     xhr.send(body)
+    xhr.onload = () => {
+        if (xhr.response == 'NO_SHARES') {
+            dialog_error.innerHTML = 'У вас не таких акций. <br> Нажмите в любом месте для закрытия.'
+            dialog_error.showModal()
+        }
+    }
 })
 
 function getCookie(name) {
@@ -87,3 +101,7 @@ function getCookie(name) {
     ))
     return matches ? decodeURIComponent(matches[1]) : undefined
 }
+
+document.addEventListener('click', ()=> {
+    dialog_error.close()
+})
