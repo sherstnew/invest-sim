@@ -8,6 +8,8 @@ const buy_cont = document.querySelector('.buy-cont')
 const sell_cont = document.querySelector('.sell-cont')
 const buy_cost = document.querySelector('.buy-cost')
 const sell_cost = document.querySelector('.sell-cost')
+const buy_input = document.querySelector('.buy-input')
+const sell_input = document.querySelector('.sell-input')
 
 const dialog_error = document.querySelector('.error')
 
@@ -56,17 +58,19 @@ buy_btn.addEventListener('click', () => {
         act_id: '',
         cost: '',
         utoken: '',
+        amount: 0,
     }
     body.act_id = searchString.get('id')
     body.cost = buy_cost.innerHTML.replace('₽', '')
     body.utoken = getCookie('token')
+    body.amount = buy_input.value
     body = JSON.stringify(body)
     xhr.setRequestHeader("Content-Type", "application/json")
     xhr.send(body)
     xhr.onload = () => {
         if (xhr.response == 'NO_MONEY') {
             dialog_error.innerHTML = 'Недостаточно средств. <br> Нажмите в любом месте для закрытия.'
-            dialog_error.showModal()
+            dialog_error.style.visibility = 'visible'
         }
     }
 })
@@ -79,17 +83,19 @@ sell_btn.addEventListener('click', () => {
         act_id: '',
         cost: '',
         utoken: '',
+        amount: 0,
     }
     body.act_id = searchString.get('id')
     body.cost = sell_cost.innerHTML.replace('₽', '')
     body.utoken = getCookie('token')
+    body.amount = sell_input.value
     body = JSON.stringify(body)
     xhr.setRequestHeader("Content-Type", "application/json")
     xhr.send(body)
     xhr.onload = () => {
         if (xhr.response == 'NO_SHARES') {
             dialog_error.innerHTML = 'У вас не таких акций. <br> Нажмите в любом месте для закрытия.'
-            dialog_error.showModal()
+            dialog_error.style.visibility = 'visible'
         }
     }
 })
@@ -103,5 +109,5 @@ function getCookie(name) {
 }
 
 document.addEventListener('click', ()=> {
-    dialog_error.close()
+    dialog_error.style.visibility = 'hidden'
 })

@@ -21,6 +21,7 @@ body {
     transform: translate(-50%, -50%);
     padding: 20px;
     border-radius: 15px;
+    visibility: hidden;
 }
 .error::backdrop {
     background: #000;
@@ -184,6 +185,27 @@ body {
     width: 200px;
     height: 200px;
     transition: 0.5s;
+}
+
+.buy-input {
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #ffcf6b;
+    padding-left: 10px;
+    font-family: 'Montserrat';
+}
+.sell-input {
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #ffba43;
+    padding-left: 10px;
+    font-family: 'Montserrat';
 }
 
 .sell-cont {

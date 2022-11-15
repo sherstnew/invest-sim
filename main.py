@@ -91,11 +91,11 @@ def api():
         if request.json['action'] == 'buy':
             if bal >= int(request.json['cost']):
                 bal = bal - int(request.json['cost'])
-                current_amount+=1
+                current_amount += int(request.json['amount'])
                 shares[request.json['act_id']] = str(current_amount)
                 cursor.execute("update fin set shares ='" + json.dumps(shares) + "' where token=" + token)
                 cursor.execute("update fin set balance =" + str(bal) + " where token=" + token)
-                cursor.execute("insert into history (token, method, act_id, cost) values (" + token + ", 'buy', '" + request.json['act_id'] + "', '" + request.json['cost'] + "')")
+                cursor.execute("insert into history (token, method, act_id, cost) values (" + token + ", 'buy', '" + request.json['act_id'] + "', '" + str(int(request.json['cost']) * int(request.json['amount'])) + "')")
                 connection.commit()
                 cursor.close()
                 connection.close()
@@ -103,12 +103,12 @@ def api():
             else:
                 return 'NO_MONEY'
         elif request.json['action'] == 'sell' and current_amount > 0:
-            bal = bal + int(request.json['cost'])
-            current_amount-=1
+            bal = bal + int(request.json['cost']) * int(request.json['amount'])
+            current_amount -= int(request.json['amount'])
             shares[request.json['act_id']] = str(current_amount)
             cursor.execute("update fin set shares ='" + json.dumps(shares) + "' where token=" + token)
             cursor.execute("update fin set balance =" + str(bal) + " where token=" + token)
-            cursor.execute("insert into history (token, method, act_id, cost) values (" + token + ", 'sell', '" + request.json['act_id'] + "', '" + request.json['cost'] + "')")
+            cursor.execute("insert into history (token, method, act_id, cost) values (" + token + ", 'sell', '" + request.json['act_id'] + "', '" + str(int(request.json['cost']) * int(request.json['amount'])) + "')")
             connection.commit()
             cursor.close()
             connection.close()
