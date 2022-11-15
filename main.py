@@ -301,7 +301,7 @@ def reg():
         mailserver = smtplib.SMTP_SSL('smtp.gmail.com', 465)
         mailserver.ehlo()
         mailserver.ehlo()
-        mailserver.login('simulatorinvestment@gmail.com', 'gjhwrskytmcqzqlk') # для яндекса использовать пароль aagajxrvrwkznihm для гугл gjhwrskytmcqzqlk
+        mailserver.login('simulatorinvestment@gmail.com', 'rokxdbvkytolqjkf') # для яндекса использовать пароль aagajxrvrwkznihm для гугл rokxdbvkytolqjkf
         mailserver.sendmail('simulatorinvestment@gmail.com', email, msg.as_string())
         mailserver.quit()
         return render_template('/reg.html', password=password, login=login, password2=password2, email=email)
