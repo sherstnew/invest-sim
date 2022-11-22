@@ -71,7 +71,7 @@ document.addEventListener('click', event => {
 })
 
 search.addEventListener('input', () => {
-    filt = DATA.filter(share => share.indexOf(search.value) != -1)
+    filt = DATA.filter(share => share.toLowerCase().indexOf(search.value.toLowerCase()) != -1)
     renderList(filt)
 })
 
