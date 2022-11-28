@@ -1,8 +1,8 @@
 get request
 
-/api/share?id=123(figi)
+/api/share?id=figi
 
-response
+v
 
 json 
 # цена прод/пок
@@ -11,4 +11,4 @@ json
 # сектор
 # название
 # комиссия
-# картинку с графиком
+картинку с графиком

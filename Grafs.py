@@ -6,7 +6,7 @@ from tinkoff.invest import Client, RequestError, CandleInterval, \
     HistoricCandle
 import plotly.io as pltio
 import pandas as pd
-import matplotlib.pyplot as plt
+
 
 figi_info = "BBG00ZNSSKP3"
 
