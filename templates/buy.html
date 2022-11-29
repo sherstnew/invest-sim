@@ -52,21 +52,23 @@
 <script>
 const shares_list = document.querySelector('.shares')
 const search = document.querySelector('.search-input')
-let DATA
+let DATA = {}
+let figis = []
+let shares = []
 const request = new XMLHttpRequest();
 
 request.open('GET', '/static/shares.json');
 
 request.onloadend = function() {
-    DATA = JSON.parse(request.responseText);
-    DATA = DATA.name
-    DATA = Object.values(DATA)
-    renderList(DATA)
+    DATA = JSON.parse(request.responseText)
+    figis = Object.keys(DATA)
+    shares = Object.values(DATA)
+    renderList(figis, shares)
 }
 
 document.addEventListener('click', event => {
-    if (DATA.indexOf(event.target.innerHTML) != -1) {
-        location.href = '/act?id=' + DATA.indexOf(event.target.innerHTML)
+    if (event.target.getAttribute('data-act-id') != undefined) {
+        location.href = '/act?id=' + event.target.getAttribute('data-act-id')
     }
 })
 
@@ -75,14 +77,15 @@ search.addEventListener('input', () => {
     renderList(filt)
 })
 
-const renderList = list => {
+const renderList = (figis, shares) => {
     while (shares_list.firstChild) {
         shares_list.removeChild(shares_list.firstChild);
     }
-    for (let i = 0; i < list.length; i++) {
+    for (let i = 0; i < figis.length; i++) {
         const li = document.createElement('li')
-        li.innerHTML = list[i]
-        li.setAttribute('data-act-id', i)
+        li.innerHTML = shares[i][4]
+        let figi = figis[i]
+        li.setAttribute('data-act-id', figi)
         shares_list.appendChild(li)
     }
 }

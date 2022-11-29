@@ -7,9 +7,9 @@ from tinkoff.invest import Client, RequestError, CandleInterval, \
 import plotly.io as pltio
 import pandas as pd
 
-import json_bd
+# import json_bd
 
-figi_info = json_bd.figi_castom
+figi_info = input()
 
 t = "t.N7tYIuWUABuLI9d_6icZxTsfOkOna3nFLHbxQKmkxGfr9zTxN3rqVWisshKxSUCHu00uB5q2QDRFP-oKsVVHJw"
 
@@ -33,7 +33,7 @@ def run():
             fig.add_trace(pltgo.Scatter(x=df["time"], y=df["cost"], name='', line=dict(color="black")))
             fig.update_traces(hovertemplate="Дата: %{x}<br>Цена: %{y}$")
             fig.update_layout(plot_bgcolor='#ffba43')
-            fig.write_image('shareimages/' + figi_info + '.png')
+            fig.write_html('shareframes/' + figi_info + '.html')
 
     except RequestError as e:
         print(str(e))

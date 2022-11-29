@@ -11,8 +11,6 @@ from email.mime.text import MIMEText
 import random
 from flask import Flask,send_from_directory
 import os
-from translate import Translator
-translator= Translator(to_lang="ru")
 application=Flask(__name__)
 
 
@@ -41,6 +39,47 @@ connection.commit()
 cursor.close()
 connection.close()
 app = Flask(__name__)
+
+def translate(name):
+    if name == "other":
+        name = "Другое"
+        return name
+    elif name == "health_care":
+        name = "Здравоохранение"
+        return name
+    elif name == "green_energy":
+        name = "Зеленая энергетика"
+        return name
+    elif name == "it":
+        name = "Информационные технологии"
+        return name
+    elif name == "ecomaterials":
+        name = "Материалы для Эко-технологий"
+        return name
+    elif name == "industrials":
+        name = "Машиностроение и транспорт"
+        return name
+    elif name == "real_estate":
+        name = "Недвижимость"
+        return name
+    elif name == "consumer":
+        name = "Потребительские товары и услуги"
+        return name
+    elif name == "materials":
+        name = "Сырьевая промышленность"
+        return name
+    elif name == "telecom":
+        name = "Телекоммуникации"
+        return name
+    elif name == "financial":
+        name = "Финансовый сектор"
+        return name
+    elif name == "electrocars":
+        name = "Электротранспорт и комплектующие"
+        return name
+    elif name == "utilities":
+        name = "Электроэнергетика"
+        return name
 
 @app.route('/api',  methods=['GET', 'POST'])
 def api():
@@ -147,7 +186,6 @@ def buy():
     actbuy = ''
     actbuy = request.form.get('act_num')  # сколько акций купил
     if actbuy != '' and actbuy != None:
-        print(actbuy)
         return redirect('/buy', code=302)
     return render_template('/buy.html', accounts=accounts)
 
@@ -158,11 +196,16 @@ def buyact():
     with open('static/shares.json', 'r', encoding='utf-8') as f:
         text = json.load(f)
 
-    act_name = text['name'][act_id]
+    act_name = text[act_id][4]
 
-    act_sector = text['sector'][act_id]
-    act_sector = translator.translate(act_sector)
-    act_desc = act_name + ' is very good shares'
+    act_sector = text[act_id][1]
+    act_sector = translate(act_sector)
+
+    act_desc = f"{act_name} \n Страна: {text[act_id][2]} \n Биржа: {text[act_id][3]}"
+
+    if text[act_id][2] == "":
+        act_desc = f"{act_name} \n Биржа: {text[act_id][3]}"
+
     buy_cost = 13
     sell_cost = 12
     daily_cost = 20
@@ -173,7 +216,7 @@ def buyact():
     lots = 100
 
 
-    return render_template('/act.html', act_name = act_name, act_desc = act_desc, act_sector = act_sector, buy_cost = buy_cost, sell_cost = sell_cost, daily_cost = daily_cost, buy_comission = buy_comission, sell_comission = sell_comission, buy_total = buy_total, sell_total = sell_total, lots = lots)
+    return render_template('/act.html', act_name = act_name, act_desc = act_desc, act_sector = act_sector, buy_cost = buy_cost, sell_cost = sell_cost, daily_cost = daily_cost, buy_comission = buy_comission, sell_comission = sell_comission, buy_total = buy_total, sell_total = sell_total, lots = lots, act_id = act_id)
 
 
 @app.route('/profile', methods=['GET', 'POST'])
@@ -426,4 +469,3 @@ connection = sqlite3.connect('regist_db.db')
 cursor = connection.cursor()
 cursor.execute("""select * from reg1""")
 rows = cursor.fetchall()
-

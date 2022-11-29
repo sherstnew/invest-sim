@@ -27,19 +27,19 @@
         "nasdaq",
         "Vitru"
     ],
-    "BBG0112HCSY4": [
-        "usd",
-        "industrials",
-        "Соединенные Штаты Америки",
-        "nasdaq",
-        "Solid Power"
-    ],
     "BBG00RDKNZ62": [
         "usd",
         "materials",
         "",
         "nyse",
         "Atotech"
+    ],
+    "BBG0112HCSY4": [
+        "usd",
+        "industrials",
+        "Соединенные Штаты Америки",
+        "nasdaq",
+        "Solid Power"
     ],
     "BBG00YTS96G2": [
         "usd",
@@ -328,19 +328,19 @@
         "nyse",
         "Teck Resources"
     ],
-    "BBG007DHZQR7": [
-        "usd",
-        "health_care",
-        "Соединенные Штаты Америки",
-        "Issuance",
-        "Cogent Biosciences"
-    ],
     "BBG000KRLH06": [
         "usd",
         "materials",
         "Российская Федерация",
         "lse",
         "MMC Norilsk Nickel PJSC"
+    ],
+    "BBG007DHZQR7": [
+        "usd",
+        "health_care",
+        "Соединенные Штаты Америки",
+        "Issuance",
+        "Cogent Biosciences"
     ],
     "BBG000PPL3G9": [
         "usd",
@@ -622,19 +622,19 @@
         "SPB",
         "Domino's Pizza Inc"
     ],
-    "BBG00YQ7XR05": [
-        "usd",
-        "industrials",
-        "Государство Израиль",
-        "SPB_MORNING",
-        "ZIM Integrated Shipping Services"
-    ],
     "BBG00ZVN6MB0": [
         "usd",
         "financial",
         "Соединенные Штаты Америки",
         "nyse",
         "Finance of America Companies"
+    ],
+    "BBG00YQ7XR05": [
+        "usd",
+        "industrials",
+        "Государство Израиль",
+        "SPB_MORNING",
+        "ZIM Integrated Shipping Services"
     ],
     "BBG000DSQLQ0": [
         "usd",
@@ -1847,19 +1847,19 @@
         "SPB",
         "Coherent Inc"
     ],
-    "BBGADIDAS001": [
-        "eur",
-        "consumer",
-        "Федеративная Республика Германия",
-        "Issuance",
-        "Adidas"
-    ],
     "BBG006D9MR17": [
         "usd",
         "health_care",
         "Соединенные Штаты Америки",
         "nasdaq",
         "Adverum Biotechnologies Inc"
+    ],
+    "BBGADIDAS001": [
+        "eur",
+        "consumer",
+        "Федеративная Республика Германия",
+        "Issuance",
+        "Adidas"
     ],
     "BBG000QYVKN2": [
         "usd",
@@ -2575,19 +2575,19 @@
         "nasdaq",
         "АДР BioLine Rx Ltd"
     ],
-    "TCS00X2MYTC2": [
-        "usd",
-        "industrials",
-        "",
-        "Issuance",
-        "Joby Aviation"
-    ],
     "BBG000DZJVH0": [
         "usd",
         "telecom",
         "Соединенные Штаты Америки",
         "SPB",
         "Nexstar Media Group Inc"
+    ],
+    "TCS00X2MYTC2": [
+        "usd",
+        "industrials",
+        "",
+        "Issuance",
+        "Joby Aviation"
     ],
     "BBG001V4SF46": [
         "usd",
@@ -3380,19 +3380,19 @@
         "Issuance",
         "IPO Ozon"
     ],
-    "BBG000BGKTF9": [
-        "usd",
-        "financial",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "Capital One"
-    ],
     "BBG0014XR0N5": [
         "usd",
         "consumer",
         "Соединенные Штаты Америки",
         "SPB_MORNING",
         "Chegg Inc"
+    ],
+    "BBG000BGKTF9": [
+        "usd",
+        "financial",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "Capital One"
     ],
     "BBG00HFFRW39": [
         "usd",
@@ -4003,19 +4003,19 @@
         "SPB",
         "First Financial Bankshares, Inc."
     ],
-    "BBG000F369C7": [
-        "usd",
-        "financial",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Encore Capital Group Inc"
-    ],
     "BBG000BKWR89": [
         "usd",
         "it",
         "Государство Израиль",
         "Issuance",
         "Radware Ltd."
+    ],
+    "BBG000F369C7": [
+        "usd",
+        "financial",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Encore Capital Group Inc"
     ],
     "BBG00KR691K8": [
         "usd",
@@ -5725,19 +5725,19 @@
         "atonbonds",
         "PolyusGold"
     ],
-    "BBG004S689R0": [
-        "rub",
-        "materials",
-        "Российская Федерация",
-        "MOEX_EVENING_WEEKEND",
-        "ФосАгро"
-    ],
     "BBG000MBHNC8": [
         "usd",
         "health_care",
         "Соединенные Штаты Америки",
         "SPB",
         "Molina Healthcare Inc"
+    ],
+    "BBG004S689R0": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "ФосАгро"
     ],
     "BBG00P80N9T9": [
         "usd",
@@ -5886,19 +5886,19 @@
         "nyse",
         "Ouster"
     ],
-    "BBG007FG0C23": [
-        "usd",
-        "telecom",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Madison Square Garden Co"
-    ],
     "BBG000DQSHL6": [
         "eur",
         "telecom",
         "Французская Республика",
         "Issuance",
         "Orange SA"
+    ],
+    "BBG007FG0C23": [
+        "usd",
+        "telecom",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Madison Square Garden Co"
     ],
     "BBG000CJ2181": [
         "usd",
@@ -7412,19 +7412,19 @@
         "nasdaq",
         "YRC Worldwide"
     ],
-    "BBG006N8B830": [
-        "usd",
-        "health_care",
-        "Королевство Нидерландов",
-        "nasdaq",
-        "ProQR Therapeutics"
-    ],
     "BBG00FY94WC1": [
         "usd",
         "financial",
         "Соединенные Штаты Америки",
         "Issuance",
         "PCSB Financial Corp"
+    ],
+    "BBG006N8B830": [
+        "usd",
+        "health_care",
+        "Королевство Нидерландов",
+        "nasdaq",
+        "ProQR Therapeutics"
     ],
     "BBG00MYXW4R8": [
         "usd",
@@ -8231,19 +8231,19 @@
         "SPB_DE",
         "Deutsche Boerse AG"
     ],
-    "BBG000BCFNR4": [
-        "usd",
-        "industrials",
-        "Китайская Народная Республика",
-        "SPB",
-        "China Eastern Airlines"
-    ],
     "BBG00F6NKQX3": [
         "rub",
         "real_estate",
         "Российская Федерация",
         "MOEX_WEEKEND",
         "ГК Самолет"
+    ],
+    "BBG000BCFNR4": [
+        "usd",
+        "industrials",
+        "Китайская Народная Республика",
+        "SPB",
+        "China Eastern Airlines"
     ],
     "BBG000BNNYW1": [
         "usd",
@@ -8749,19 +8749,19 @@
         "MOEX",
         "НКХП"
     ],
-    "BBG0029KYGL5": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "nasdaq",
-        "Freshworks"
-    ],
     "BBG000BLGLW1": [
         "eur",
         "materials",
         "Французская Республика",
         "Issuance",
         "Air Liquide S.A."
+    ],
+    "BBG0029KYGL5": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "nasdaq",
+        "Freshworks"
     ],
     "BBG00GQK3WB5": [
         "usd",
@@ -8805,19 +8805,19 @@
         "SPB_DE",
         "Fresenius Medical Care AG & Co"
     ],
-    "BBG000F964B6": [
-        "usd",
-        "utilities",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "American States Water Co"
-    ],
     "BBG000BSZ738": [
         "usd",
         "financial",
         "Соединенные Штаты Америки",
         "SPB",
         "Selective Insurance Group"
+    ],
+    "BBG000F964B6": [
+        "usd",
+        "utilities",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "American States Water Co"
     ],
     "BBG0089RJVS4": [
         "usd",
@@ -10989,19 +10989,19 @@
         "SPB",
         "Shift4 Payments"
     ],
-    "BBG000BVP7Y8": [
-        "eur",
-        "it",
-        "Соединенные Штаты Америки",
-        "xetra",
-        "Samsung SDI"
-    ],
     "BBG00SNC49V8": [
         "usd",
         "health_care",
         "Соединенные Штаты Америки",
         "Issuance",
         "Design Therapeutics"
+    ],
+    "BBG000BVP7Y8": [
+        "eur",
+        "it",
+        "Соединенные Штаты Америки",
+        "xetra",
+        "Samsung SDI"
     ],
     "BBG00ALIBABA": [
         "hkd",
@@ -11465,19 +11465,19 @@
         "nasdaq",
         "Meridian Bioscience Inc"
     ],
-    "BBG00SDJ8M78": [
-        "usd",
-        "health_care",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Nurix Therapeutics Inc"
-    ],
     "BBG00YNK2P25": [
         "usd",
         "financial",
         "",
         "Issuance",
         "SVF Investment Corp"
+    ],
+    "BBG00SDJ8M78": [
+        "usd",
+        "health_care",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Nurix Therapeutics Inc"
     ],
     "BBG000BHP8J4": [
         "usd",
@@ -12186,19 +12186,19 @@
         "SPB",
         "Floor & Decor Holdings Inc"
     ],
-    "BBG000N7MXL8": [
-        "usd",
-        "consumer",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "Etsy Inc"
-    ],
     "BBG000BGLFP7": [
         "usd",
         "real_estate",
         "Соединенные Штаты Америки",
         "SPB_MORNING",
         "STAG Industrial REIT"
+    ],
+    "BBG000N7MXL8": [
+        "usd",
+        "consumer",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "Etsy Inc"
     ],
     "BBG00L9211Y8": [
         "usd",
@@ -12746,19 +12746,19 @@
         "SPB",
         "ContextLogic"
     ],
-    "BBG007TJF1N7": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "Qorvo"
-    ],
     "BBG000BQ8KV2": [
         "usd",
         "materials",
         "Соединенные Штаты Америки",
         "SPB_MORNING",
         "Nucor"
+    ],
+    "BBG007TJF1N7": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "Qorvo"
     ],
     "BBG000FJH8W0": [
         "usd",
@@ -12851,19 +12851,19 @@
         "Issuance",
         "Marathon Digital Holdings Inc."
     ],
-    "BBG000DCGRL8": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "IPG Photonics Corporation"
-    ],
     "BBG000HCXFS4": [
         "usd",
         "consumer",
         "Соединенные Штаты Америки",
         "SPB",
         "Johnson Outdoors Inc"
+    ],
+    "BBG000DCGRL8": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "IPG Photonics Corporation"
     ],
     "BBG001MNQGH0": [
         "usd",
@@ -14853,19 +14853,19 @@
         "SPB",
         "Eagle Materials Inc"
     ],
-    "BBG000DQTXY6": [
-        "usd",
-        "consumer",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "D.R. Horton"
-    ],
     "BBG000J79P80": [
         "usd",
         "materials",
         "Соединенные Штаты Америки",
         "SPB",
         "Sensient Technologies Corp"
+    ],
+    "BBG000DQTXY6": [
+        "usd",
+        "consumer",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "D.R. Horton"
     ],
     "BBG000BV6QX8": [
         "usd",
@@ -15343,19 +15343,19 @@
         "SPB",
         "Boston Beer Co Inc The"
     ],
-    "BBG00HPSG933": [
-        "usd",
-        "health_care",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "ACM Research Inc"
-    ],
     "BBG000BFPK65": [
         "usd",
         "financial",
         "Соединенные Штаты Америки",
         "SPB",
         "Cincinnati Financial Corporation"
+    ],
+    "BBG00HPSG933": [
+        "usd",
+        "health_care",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "ACM Research Inc"
     ],
     "BBG000BFR0T2": [
         "usd",
@@ -15392,19 +15392,19 @@
         "SPB",
         "Globe Life Inc"
     ],
-    "BBG000BBY1B0": [
-        "eur",
-        "consumer",
-        "Французская Республика",
-        "Issuance",
-        "Danone SA"
-    ],
     "BBG000DZX6K5": [
         "usd",
         "electrocars",
         "Китайская Народная Республика",
         "nasdaq",
         "CBAK Energy Technology"
+    ],
+    "BBG000BBY1B0": [
+        "eur",
+        "consumer",
+        "Французская Республика",
+        "Issuance",
+        "Danone SA"
     ],
     "BBG002868YT9": [
         "usd",
@@ -16638,19 +16638,19 @@
         "SPB",
         "Leucadia National"
     ],
-    "BBG00P4R3079": [
-        "usd",
-        "consumer",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Grocery Outlet Holding Corp"
-    ],
     "BBG000BR4TH1": [
         "usd",
         "it",
         "",
         "nyse",
         "АДР United Microelectronics"
+    ],
+    "BBG00P4R3079": [
+        "usd",
+        "consumer",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Grocery Outlet Holding Corp"
     ],
     "BBG000C0MQQ5": [
         "usd",
@@ -16785,19 +16785,19 @@
         "nyse",
         "RPT Realty REIT"
     ],
-    "BBG000BBS2Y0": [
-        "usd",
-        "health_care",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "Amgen"
-    ],
     "BBG000BQD6P4": [
         "eur",
         "consumer",
         "Швейцарская Конфедерация",
         "xetra",
         "Compagnie Financiere Richemont"
+    ],
+    "BBG000BBS2Y0": [
+        "usd",
+        "health_care",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "Amgen"
     ],
     "BBG002BLR408": [
         "rub",
@@ -17107,19 +17107,19 @@
         "nasdaq",
         "T2 Biosystems Inc"
     ],
-    "BBG000BM0QL7": [
-        "usd",
-        "industrials",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Smith & Wesson Brands"
-    ],
     "BBG000VJJHR6": [
         "usd",
         "materials",
         "Мексиканские Соединенные Штаты",
         "Issuance",
         "Fresnillo PLC"
+    ],
+    "BBG000BM0QL7": [
+        "usd",
+        "industrials",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Smith & Wesson Brands"
     ],
     "BBG000BFD605": [
         "usd",
@@ -17478,19 +17478,19 @@
         "SPB",
         "Innoviva Inc"
     ],
-    "BBG000F6H8W8": [
-        "usd",
-        "consumer",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "Costco Wholesale"
-    ],
     "BBG00ZL5BW31": [
         "usd",
         "financial",
         "Соединенные Штаты Америки",
         "Issuance",
         "Fortress Value Acquisition Corp IV"
+    ],
+    "BBG000F6H8W8": [
+        "usd",
+        "consumer",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "Costco Wholesale"
     ],
     "BBG000K4ND22": [
         "usd",
@@ -17583,19 +17583,19 @@
         "SPB_MORNING",
         "Raymond James Financial"
     ],
-    "BBG000BKQDQ7": [
-        "usd",
-        "industrials",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Gibraltar Industries Inc"
-    ],
     "BBG000BBHHP9": [
         "usd",
         "industrials",
         "Соединенные Штаты Америки",
         "SPB",
         "Applied Industrial Technologies"
+    ],
+    "BBG000BKQDQ7": [
+        "usd",
+        "industrials",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Gibraltar Industries Inc"
     ],
     "BBG000BBK4B9": [
         "usd",
@@ -20026,19 +20026,19 @@
         "nyse",
         "AMC Entertainment Holdings - привилегированные акции"
     ],
-    "BBG000BN53G7": [
-        "usd",
-        "consumer",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Leggett & Platt"
-    ],
     "ISSUANCETES1": [
         "rub",
         "it",
         "",
         "Issuance",
         "IPO test"
+    ],
+    "BBG000BN53G7": [
+        "usd",
+        "consumer",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Leggett & Platt"
     ],
     "BBG009R3Z5S4": [
         "usd",
@@ -20838,19 +20838,19 @@
         "SPB",
         "East West Ban"
     ],
-    "BBG000BLMTR3": [
-        "eur",
-        "consumer",
-        "Федеративная Республика Германия",
-        "SPB_DE",
-        "PUMA SE"
-    ],
     "BBG00475KKY8": [
         "rub",
         "energy",
         "Российская Федерация",
         "MOEX_EVENING_WEEKEND",
         "НОВАТЭК"
+    ],
+    "BBG000BLMTR3": [
+        "eur",
+        "consumer",
+        "Федеративная Республика Германия",
+        "SPB_DE",
+        "PUMA SE"
     ],
     "BBG000BKGXQ4": [
         "usd",
@@ -22343,19 +22343,19 @@
         "SPB",
         "Amedisys Inc"
     ],
-    "BBG00K7ZQ662": [
-        "usd",
-        "industrials",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "IAA, Inc."
-    ],
     "BBG000GPXR82": [
         "usd",
         "materials",
         "Республика Перу",
         "Issuance",
         "АДР Compania de Minas Buenaventura"
+    ],
+    "BBG00K7ZQ662": [
+        "usd",
+        "industrials",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "IAA, Inc."
     ],
     "BBG000BHCYJ1": [
         "usd",
@@ -22630,19 +22630,19 @@
         "SPB",
         "Lordstown Motors Corp"
     ],
-    "BBG000BB2DM7": [
-        "usd",
-        "materials",
-        "",
-        "SPB",
-        "Kinross Gold"
-    ],
     "BBG000BFLXV3": [
         "usd",
         "consumer",
         "Соединенные Штаты Америки",
         "SPB",
         "Pilgrim's Pride Corp"
+    ],
+    "BBG000BB2DM7": [
+        "usd",
+        "materials",
+        "",
+        "SPB",
+        "Kinross Gold"
     ],
     "BBG0060K22C1": [
         "usd",
@@ -24611,19 +24611,19 @@
         "nasdaq",
         "Phibro Animal Health"
     ],
-    "BBG00Z6RF483": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Bumble Inc."
-    ],
     "BBG000RJ2J04": [
         "usd",
         "it",
         "Соединенные Штаты Америки",
         "SPB",
         "SS&C Technologies Holdings Inc"
+    ],
+    "BBG00Z6RF483": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Bumble Inc."
     ],
     "BBG00Y52B8J5": [
         "usd",
@@ -25164,19 +25164,19 @@
         "MOEX",
         "РН-Западная Сибирь"
     ],
-    "BBG000QWMWR6": [
-        "usd",
-        "energy",
-        "Соединенное Королевство Великобритании и Северной Ирландии",
-        "Issuance",
-        "Royal Dutch Shell (B)"
-    ],
     "BBG00KJQGPM0": [
         "usd",
         "health_care",
         "Соединенные Штаты Америки",
         "nasdaq",
         "Eidos Therapeutics Inc"
+    ],
+    "BBG000QWMWR6": [
+        "usd",
+        "energy",
+        "Соединенное Королевство Великобритании и Северной Ирландии",
+        "Issuance",
+        "Royal Dutch Shell (B)"
     ],
     "BBG000BJTD50": [
         "usd",
@@ -25913,19 +25913,19 @@
         "Issuance",
         "First Financial Corporation Indiana"
     ],
-    "BBG000BMTFR4": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "KLA-Tencor"
-    ],
     "BBG000BBRPL4": [
         "usd",
         "industrials",
         "Соединенные Штаты Америки",
         "SPB",
         "EMCOR Group"
+    ],
+    "BBG000BMTFR4": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "KLA-Tencor"
     ],
     "BBG000BHPFQ0": [
         "usd",
@@ -25955,19 +25955,19 @@
         "SPB",
         "Avis Budget Group"
     ],
-    "BBG0078W3NQ3": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "Hewlett Packard Enterprise"
-    ],
     "BBG000G7QX50": [
         "usd",
         "health_care",
         "Соединенные Штаты Америки",
         "SPB",
         "Premier Inc"
+    ],
+    "BBG0078W3NQ3": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "Hewlett Packard Enterprise"
     ],
     "BBG000QHV8S1": [
         "usd",
@@ -26263,19 +26263,19 @@
         "nasdaq",
         "Ingles Markets Inc."
     ],
-    "BBG00XK3WVD0": [
-        "usd",
-        "real_estate",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Apartment Income REIT"
-    ],
     "BBGRWE000000": [
         "eur",
         "utilities",
         "",
         "Issuance",
         "RWE AG"
+    ],
+    "BBG00XK3WVD0": [
+        "usd",
+        "real_estate",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Apartment Income REIT"
     ],
     "BBG000BF3G77": [
         "usd",
@@ -26466,19 +26466,19 @@
         "otcus",
         "OrganiGram Holding Inc"
     ],
-    "BBG000BLCR07": [
-        "jpy",
-        "telecom",
-        "",
-        "Issuance",
-        "Nintendo"
-    ],
     "BBG000BVMGF2": [
         "usd",
         "financial",
         "Соединенные Штаты Америки",
         "SPB_MORNING",
         "The Allstate Corporation"
+    ],
+    "BBG000BLCR07": [
+        "jpy",
+        "telecom",
+        "",
+        "Issuance",
+        "Nintendo"
     ],
     "BBGDEUTSCHEP": [
         "eur",
@@ -27502,19 +27502,19 @@
         "nasdaq",
         "Clarus Corp"
     ],
-    "BBG00RPJPN67": [
-        "usd",
-        "consumer",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "AZEK Company"
-    ],
     "BBGINFINTECH": [
         "eur",
         "it",
         "Федеративная Республика Германия",
         "Issuance",
         "Infineon Technologies AG"
+    ],
+    "BBG00RPJPN67": [
+        "usd",
+        "consumer",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "AZEK Company"
     ],
     "BBG00LVGQZL4": [
         "usd",
@@ -27705,19 +27705,19 @@
         "SPB",
         "Applied Therapeutics"
     ],
-    "BBGXX50STOXX": [
-        "usd",
-        "",
-        "",
-        "Issuance",
-        "EURO STOXX 50"
-    ],
     "BBG000BRCHB4": [
         "usd",
         "industrials",
         "Соединенные Штаты Америки",
         "SPB",
         "Forward Air Corporation"
+    ],
+    "BBGXX50STOXX": [
+        "usd",
+        "",
+        "",
+        "Issuance",
+        "EURO STOXX 50"
     ],
     "BBG001J2PFF5": [
         "usd",
@@ -27775,19 +27775,19 @@
         "SPB",
         "Hub Group Inc"
     ],
-    "BBG0084BBZY6": [
-        "usd",
-        "green_energy",
-        "Государство Израиль",
-        "SPB",
-        "SolarEdge Technologies Inc"
-    ],
     "BBG001QYK8T3": [
         "usd",
         "it",
         "Соединенные Штаты Америки",
         "nyse",
         "Avaya Holdings"
+    ],
+    "BBG0084BBZY6": [
+        "usd",
+        "green_energy",
+        "Государство Израиль",
+        "SPB",
+        "SolarEdge Technologies Inc"
     ],
     "BBG000HD4S15": [
         "rub",
@@ -28307,19 +28307,19 @@
         "nasdaq",
         "UroGen Pharma"
     ],
-    "BBG000KLB4Q1": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "Skyworks Solutions"
-    ],
     "BBG000C8L273": [
         "eur",
         "it",
         "Федеративная Республика Германия",
         "SPB_DE",
         "Infineon Technologies AG"
+    ],
+    "BBG000KLB4Q1": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "Skyworks Solutions"
     ],
     "BBG00M8832B5": [
         "hkd",
@@ -28426,19 +28426,19 @@
         "SPB",
         "Red Hat"
     ],
-    "BBG00Q741Z16": [
-        "usd",
-        "electrocars",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "ChargePoint Holdings"
-    ],
     "BBG0076WG2V1": [
         "usd",
         "consumer",
         "",
         "nyse",
         "Restaurant Brands International"
+    ],
+    "BBG00Q741Z16": [
+        "usd",
+        "electrocars",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "ChargePoint Holdings"
     ],
     "BBG000DW4Q75": [
         "usd",
@@ -28734,19 +28734,19 @@
         "SPB",
         "Skechers U.S.A. Inc"
     ],
-    "BBG00D2P5846": [
-        "eur",
-        "green_energy",
-        "",
-        "Issuance",
-        "Orsted"
-    ],
     "BBG000LTPD97": [
         "usd",
         "materials",
         "Аргентинская Республика",
         "nyse",
         "Ternium SA"
+    ],
+    "BBG00D2P5846": [
+        "eur",
+        "green_energy",
+        "",
+        "Issuance",
+        "Orsted"
     ],
     "BBG00DR7R3D6": [
         "usd",
