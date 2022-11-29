@@ -73,8 +73,10 @@ document.addEventListener('click', event => {
 })
 
 search.addEventListener('input', () => {
-    filt = DATA.filter(share => share.toLowerCase().indexOf(search.value.toLowerCase()) != -1)
-    renderList(filt)
+    shares = shares.filter(share => search.value.toLowerCase() === share[4].toLowerCase())
+    figis = figis.filter(figi => search.value.toLowerCase() === figi)
+    // TODO: Поиск
+    renderList(figis, shares)
 })
 
 const renderList = (figis, shares) => {
