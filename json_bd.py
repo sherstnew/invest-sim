@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import json
 import requests
 
-figi = input()
+figi_castom = input()
 op = 1
 day_procent = 0
 
@@ -28,7 +28,7 @@ with Client(t) as cl:
                 'exchange': i.exchange,
                 # 'short': i.short_enabled_flag,
                 'name': i.name,
-                'ticker': i.ticker,
+                'figi': i.figi,
             }
 
             data.append(shares_info)
@@ -101,29 +101,29 @@ with Client(t) as cl:
 # # print(bonds)
 # # print(currencies)
 # # print(etfs)
-shar = shares.set_index('ticker').T.to_dict('list')
+shar = shares.set_index('figi').T.to_dict('list')
 
 
-# with open("shares.json", "w", encoding="utf-8") as f:
-#     json.dump(shar, f, ensure_ascii=False, indent=4)
+with open("shares.json", "w", encoding="utf-8") as f:
+    json.dump(shar, f, ensure_ascii=False, indent=4)
 
-with Client(t) as cl:
-    r = cl.market_data.get_candles(
-        figi="AT1",
-        from_=datetime.utcnow() - timedelta(days=1),
-        to=datetime.utcnow(),
-        interval=CandleInterval.CANDLE_INTERVAL_5_MIN
-    )
 
 def response(figi):
-    # for candle in r.candles:
-    #     lprice.append(candle.close.units + candle.close.nano / 1e9)
-    # print(lprice[-1])
-    # day_procent = (lprice[-1] * 100) / lprice[0]
-    # print(day_procent)
-    translate(figi=figi)
-    print(shar[figi[1]])
-    name = shar[figi[2]]
+    with Client(t) as cl:
+        r = cl.market_data.get_candles(
+            figi=figi_castom,
+            from_=datetime.utcnow() - timedelta(days=1),
+            to=datetime.utcnow(),
+            interval=CandleInterval.CANDLE_INTERVAL_5_MIN
+        )
+    for candle in r.candles:
+        lprice.append(candle.close.units + candle.close.nano / 1e9)
+    print(lprice[-1])
+    day_procent = (lprice[-1] * 100) / lprice[0]
+    print(day_procent)
+    translate(figi=figi_castom)
+    print(shar[figi][1])
+    name = shar[figi][4]
     print(name)
 
 
@@ -159,4 +159,4 @@ def translate(figi):
         shar[figi][1] = "Электроэнергетика"
 
 
-response(figi=figi)
+response(figi=figi_castom)

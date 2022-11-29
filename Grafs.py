@@ -7,8 +7,9 @@ from tinkoff.invest import Client, RequestError, CandleInterval, \
 import plotly.io as pltio
 import pandas as pd
 
+import json_bd
 
-figi_info = "BBG00ZNSSKP3"
+figi_info = json_bd.figi_castom
 
 t = "t.N7tYIuWUABuLI9d_6icZxTsfOkOna3nFLHbxQKmkxGfr9zTxN3rqVWisshKxSUCHu00uB5q2QDRFP-oKsVVHJw"
 
