@@ -7,9 +7,10 @@ import requests
 figi_castom = input()
 op = 1
 day_procent = 0
+lasrprice = ""
 
 name = 0
-
+r = 0
 s = []
 lprice = []
 
@@ -26,9 +27,9 @@ with Client(t) as cl:
                 'sector': i.sector,
                 'country': i.country_of_risk_name,
                 'exchange': i.exchange,
-                # 'short': i.short_enabled_flag,
                 'name': i.name,
                 'figi': i.figi,
+                'lot': i.lot,
             }
 
             data.append(shares_info)
@@ -103,34 +104,12 @@ with Client(t) as cl:
 # # print(etfs)
 shar = shares.set_index('figi').T.to_dict('list')
 
-
 with open("shares.json", "w", encoding="utf-8") as f:
     json.dump(shar, f, ensure_ascii=False, indent=4)
 
 
-def response(figi):
-    with Client(t) as cl:
-        r = cl.market_data.get_candles(
-            figi=figi_castom,
-            from_=datetime.utcnow() - timedelta(days=1),
-            to=datetime.utcnow(),
-            interval=CandleInterval.CANDLE_INTERVAL_5_MIN
-        )
-    for candle in r.candles:
-        lprice.append(candle.close.units + candle.close.nano / 1e9)
-    print(lprice[-1])
-    day_procent = (lprice[-1] * 100) / lprice[0]
-    print(day_procent)
-    translate(figi=figi_castom)
-    print(shar[figi][1])
-    name = shar[figi][4]
-    print(name)
-
-
-
-
-
 def translate(figi):
+
     if shar[figi][1] == "other":
         shar[figi][1] = "Другое"
     elif shar[figi][1] == "health_care":
@@ -157,6 +136,41 @@ def translate(figi):
         shar[figi][1] = "Электротранспорт и комплектующие"
     elif shar[figi][1] == "utilities":
         shar[figi][1] = "Электроэнергетика"
+
+def last_price():
+    with Client(t) as cl:
+        r = cl.market_data.get_candles(
+            figi=figi_castom,
+            from_=datetime.utcnow() - timedelta(days=1),
+            to=datetime.utcnow(),
+            interval=CandleInterval.CANDLE_INTERVAL_5_MIN
+        )
+    for candle in r.candles:
+        lprice.append(candle.close.units + candle.close.nano / 1e9)
+
+
+def sym_last_price():
+    if shar[figi_castom][0] == "usd":
+        lastprice = str(lprice[-1]) + "$"
+    elif shar[figi_castom][0] == "eur":
+        lastprice = str(lprice[-1]) + "€"
+    elif shar[figi_castom][0] == "rub":
+        lastprice = str(lprice[-1]) + "₽"
+    print(lastprice)
+
+
+
+def response(figi):
+    last_price()
+    sym_last_price()
+    day_procent = 100 - (lprice[-1] * 100) / lprice[0]
+    print(day_procent)
+    translate(figi=figi_castom)
+    print(shar[figi][1])
+    name = shar[figi][4]
+    print(name)
+    lot = shar[figi][5]
+    print(lot)
 
 
 response(figi=figi_castom)
