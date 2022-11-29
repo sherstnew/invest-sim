@@ -32,7 +32,7 @@ def run():
             fig.add_trace(pltgo.Scatter(x=df["time"], y=df["cost"], name='', line=dict(color="black")))
             fig.update_traces(hovertemplate="Дата: %{x}<br>Цена: %{y}$")
             fig.update_layout(plot_bgcolor='#ffba43')
-            fig.show()
+            fig.write_image('shareimages/' + figi_info + '.png')
 
     except RequestError as e:
         print(str(e))
