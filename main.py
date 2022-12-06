@@ -10,6 +10,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import random
 from flask import Flask,send_from_directory
+import json_bd as jbd
 import os
 application=Flask(__name__)
 
@@ -111,7 +112,9 @@ def api():
             cursor.execute("select * from history where token=" + request.json['utoken'])
             history = cursor.fetchall()
             return history
-
+        elif request.json['action'] == 'share':
+            share = jbd.response(request.json['figi'])
+            return share
         cursor.execute("select balance from fin where token=" + request.json['utoken'])
 
         bal = int(cursor.fetchall()[0][0])

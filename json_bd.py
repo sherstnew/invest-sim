@@ -110,69 +110,84 @@ with open("shares.json", "w", encoding="utf-8") as f:
     json.dump(shar, f, ensure_ascii=False, indent=4)
 
 
-# def translate(figi):
-#
-#     if shar[figi][1] == "other":
-#         shar[figi][1] = "Другое"
-#     elif shar[figi][1] == "health_care":
-#         shar[figi][1] = "Здравоохранение"
-#     elif shar[figi][1] == "green_energy":
-#         shar[figi][1] = "Зеленая энергетика"
-#     elif shar[figi][1] == "it":
-#         shar[figi][1] = "Информационные технологии"
-#     elif shar[figi][1] == "ecomaterials":
-#         shar[figi][1] = "Материалы для Эко-технологий"
-#     elif shar[figi][1] == "industrials":
-#         shar[figi][1] = "Машиностроение и транспорт"
-#     elif shar[figi][1] == "real_estate":
-#         shar[figi][1] = "Недвижимость"
-#     elif shar[figi][1] == "consumer":
-#         shar[figi][1] = "Потребительские товары и услуги"
-#     elif shar[figi][1] == "materials":
-#         shar[figi][1] = "Сырьевая промышленность"
-#     elif shar[figi][1] == "telecom":
-#         shar[figi][1] = "Телекоммуникации"
-#     elif shar[figi][1] == "financial":
-#         shar[figi][1] = "Финансовый сектор"
-#     elif shar[figi][1] == "electrocars":
-#         shar[figi][1] = "Электротранспорт и комплектующие"
-#     elif shar[figi][1] == "utilities":
-#         shar[figi][1] = "Электроэнергетика"
-#
-# def last_price():
-#     with Client(t) as cl:
-#         r = cl.market_data.get_candles(
-#             figi=figi_castom,
-#             from_=datetime.utcnow() - timedelta(days=1),
-#             to=datetime.utcnow(),
-#             interval=CandleInterval.CANDLE_INTERVAL_5_MIN
-#         )
-#     for candle in r.candles:
-#         lprice.append(candle.close.units + candle.close.nano / 1e9)
-#
-#
-# def sym_last_price():
-#     if shar[figi_castom][0] == "usd":
-#         lastprice = str(lprice[-1]) + "$"
-#     elif shar[figi_castom][0] == "eur":
-#         lastprice = str(lprice[-1]) + "€"
-#     elif shar[figi_castom][0] == "rub":
-#         lastprice = str(lprice[-1]) + "₽"
-#     print(lastprice)
-#
-#
-#
-# def response(figi):
-#     last_price()
-#     sym_last_price()
-#     day_procent = 100 - (lprice[-1] * 100) / lprice[0]
-#     print(day_procent)
-#     translate(figi=figi_castom)
-#     print(shar[figi][1])
-#     name = shar[figi][4]
-#     print(name)
-#     lot = shar[figi][5]
-#     print(lot)
-#
-#
-# response(figi=figi_castom)
+def translate(figi):
+
+    if shar[figi][1] == "other":
+        shar[figi][1] = "Другое"
+    elif shar[figi][1] == "health_care":
+        shar[figi][1] = "Здравоохранение"
+    elif shar[figi][1] == "green_energy":
+        shar[figi][1] = "Зеленая энергетика"
+    elif shar[figi][1] == "it":
+        shar[figi][1] = "Информационные технологии"
+    elif shar[figi][1] == "ecomaterials":
+        shar[figi][1] = "Материалы для Эко-технологий"
+    elif shar[figi][1] == "industrials":
+        shar[figi][1] = "Машиностроение и транспорт"
+    elif shar[figi][1] == "real_estate":
+        shar[figi][1] = "Недвижимость"
+    elif shar[figi][1] == "consumer":
+        shar[figi][1] = "Потребительские товары и услуги"
+    elif shar[figi][1] == "materials":
+        shar[figi][1] = "Сырьевая промышленность"
+    elif shar[figi][1] == "telecom":
+        shar[figi][1] = "Телекоммуникации"
+    elif shar[figi][1] == "financial":
+        shar[figi][1] = "Финансовый сектор"
+    elif shar[figi][1] == "electrocars":
+        shar[figi][1] = "Электротранспорт и комплектующие"
+    elif shar[figi][1] == "utilities":
+        shar[figi][1] = "Электроэнергетика"
+
+def last_price(figi):
+    with Client(t) as cl:
+        r = cl.market_data.get_candles(
+            figi=figi,
+            from_=datetime.utcnow() - timedelta(days=1),
+            to=datetime.utcnow(),
+            interval=CandleInterval.CANDLE_INTERVAL_5_MIN
+        )
+    for candle in r.candles:
+        lprice.append(candle.close.units + candle.close.nano / 1e9)
+
+
+def sym_last_price(figi):
+    if shar[figi][0] == "usd":
+        lastprice = str(lprice[-1]) + "$"
+    elif shar[figi][0] == "eur":
+        lastprice = str(lprice[-1]) + "€"
+    elif shar[figi][0] == "rub":
+        lastprice = str(lprice[-1]) + "₽"
+    return lastprice
+
+
+
+def response(figi):
+    last_price(figi=figi_castom)
+    lst_price = sym_last_price(figi=figi_castom)
+    day_procent = (lprice[-1] * 100) / lprice[0] - 100
+    # print(day_procent)
+    translate(figi=figi_castom)
+    sector = shar[figi][1]
+    name = shar[figi][4]
+    country = shar[figi][2]
+    # print(name)
+    lot = shar[figi][5]
+    # print(lot)
+    trade_enable = shar[figi][6]
+    # print(trade_enable)
+    exchange = shar[figi][3]
+    share = {
+        "name": name,
+        "last_price": lst_price,
+        "day_procent": day_procent,
+        "lots": lot,
+        "trade_state": trade_enable,
+        "sector": sector,
+        "country": country,
+        "exchange": exchange
+    }
+
+    return share
+
+response(figi=figi_castom)
