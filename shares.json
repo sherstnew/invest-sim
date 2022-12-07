@@ -44,6 +44,15 @@
         1,
         4
     ],
+    "BBG00JN4FXG8": [
+        "usd",
+        "health_care",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Solid Biosciences",
+        1,
+        4
+    ],
     "BBG000DW34S2": [
         "usd",
         "it",
@@ -1313,21 +1322,21 @@
         1,
         5
     ],
-    "BBG00B8N0HG1": [
-        "usd",
-        "consumer",
-        "Китайская Народная Республика",
-        "SPB",
-        "Yum China Holdings",
-        1,
-        4
-    ],
     "BBG000DQN9R3": [
         "usd",
         "industrials",
         "Соединенные Штаты Америки",
         "SPB",
         "Middleby Corp The",
+        1,
+        4
+    ],
+    "BBG00B8N0HG1": [
+        "usd",
+        "consumer",
+        "Китайская Народная Республика",
+        "SPB",
+        "Yum China Holdings",
         1,
         4
     ],
@@ -2915,6 +2924,15 @@
         1,
         4
     ],
+    "BBG000BJ35N5": [
+        "hkd",
+        "telecom",
+        "Китайская Народная Республика",
+        "SPB_HK",
+        "Tencent Holdings",
+        1,
+        5
+    ],
     "BBG000BTKR92": [
         "usd",
         "consumer",
@@ -3626,15 +3644,6 @@
         1,
         4
     ],
-    "BBG000MBHNC8": [
-        "usd",
-        "health_care",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Molina Healthcare Inc",
-        1,
-        4
-    ],
     "BBG004S689R0": [
         "rub",
         "materials",
@@ -3643,6 +3652,15 @@
         "ФосАгро",
         1,
         5
+    ],
+    "BBG000MBHNC8": [
+        "usd",
+        "health_care",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Molina Healthcare Inc",
+        1,
+        4
     ],
     "BBG002GBMZG4": [
         "usd",
@@ -4184,21 +4202,21 @@
         1,
         4
     ],
-    "BBG000DCCZW2": [
-        "usd",
-        "industrials",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "AGCO Corp",
-        1,
-        4
-    ],
     "BBG000BX28M0": [
         "usd",
         "consumer",
         "Соединенные Штаты Америки",
         "SPB",
         "USANA Health Sciences Inc",
+        1,
+        4
+    ],
+    "BBG000DCCZW2": [
+        "usd",
+        "industrials",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "AGCO Corp",
         1,
         4
     ],
@@ -5237,15 +5255,6 @@
         1,
         4
     ],
-    "BBG000BCFNR4": [
-        "usd",
-        "industrials",
-        "Китайская Народная Республика",
-        "SPB",
-        "China Eastern Airlines",
-        1,
-        4
-    ],
     "BBG00F6NKQX3": [
         "rub",
         "real_estate",
@@ -5254,6 +5263,15 @@
         "ГК Самолет",
         1,
         5
+    ],
+    "BBG000BCFNR4": [
+        "usd",
+        "industrials",
+        "Китайская Народная Республика",
+        "SPB",
+        "China Eastern Airlines",
+        1,
+        4
     ],
     "BBG000BNNYW1": [
         "usd",
@@ -6353,21 +6371,21 @@
         1,
         4
     ],
-    "BBG000PMBV39": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "ACI Worldwide, Inc.",
-        1,
-        4
-    ],
     "BBG000C9K8K4": [
         "usd",
         "health_care",
         "Соединенные Штаты Америки",
         "SPB",
         "Anavex Life Sciences Corp.",
+        1,
+        4
+    ],
+    "BBG000PMBV39": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "ACI Worldwide, Inc.",
         1,
         4
     ],
@@ -6532,6 +6550,15 @@
         "BioNTech SE",
         1,
         4
+    ],
+    "BBG00LLV9WW6": [
+        "hkd",
+        "consumer",
+        "Китайская Народная Республика",
+        "SPB_HK",
+        "Meituan",
+        10,
+        5
     ],
     "BBG000C1HN22": [
         "usd",
@@ -7793,21 +7820,21 @@
         1,
         4
     ],
-    "BBG000N7MXL8": [
-        "usd",
-        "consumer",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "Etsy Inc",
-        1,
-        5
-    ],
     "BBG000BGLFP7": [
         "usd",
         "real_estate",
         "Соединенные Штаты Америки",
         "SPB_MORNING",
         "STAG Industrial REIT",
+        1,
+        5
+    ],
+    "BBG000N7MXL8": [
+        "usd",
+        "consumer",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "Etsy Inc",
         1,
         5
     ],
@@ -8090,15 +8117,6 @@
         1,
         4
     ],
-    "BBG004S68598": [
-        "rub",
-        "materials",
-        "Российская Федерация",
-        "MOEX_WEEKEND",
-        "Мечел",
-        1,
-        5
-    ],
     "BBG0021PH456": [
         "usd",
         "health_care",
@@ -8107,6 +8125,15 @@
         "Inogen Inc",
         1,
         4
+    ],
+    "BBG004S68598": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_WEEKEND",
+        "Мечел",
+        1,
+        5
     ],
     "BBG000BF6RQ9": [
         "usd",
@@ -8279,21 +8306,21 @@
         1,
         5
     ],
-    "BBG000DCGRL8": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "IPG Photonics Corporation",
-        1,
-        4
-    ],
     "BBG000HCXFS4": [
         "usd",
         "consumer",
         "Соединенные Штаты Америки",
         "SPB",
         "Johnson Outdoors Inc",
+        1,
+        4
+    ],
+    "BBG000DCGRL8": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "IPG Photonics Corporation",
         1,
         4
     ],
@@ -8909,6 +8936,15 @@
         1,
         4
     ],
+    "BBG00QV37ZP9": [
+        "hkd",
+        "consumer",
+        "Китайская Народная Республика",
+        "SPB_HK",
+        "Alibaba",
+        10,
+        5
+    ],
     "BBG000BLHRS2": [
         "usd",
         "consumer",
@@ -9494,15 +9530,6 @@
         1,
         4
     ],
-    "BBG000DQTXY6": [
-        "usd",
-        "consumer",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "D.R. Horton",
-        1,
-        5
-    ],
     "BBG000J79P80": [
         "usd",
         "materials",
@@ -9511,6 +9538,15 @@
         "Sensient Technologies Corp",
         1,
         4
+    ],
+    "BBG000DQTXY6": [
+        "usd",
+        "consumer",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "D.R. Horton",
+        1,
+        5
     ],
     "BBG000J6XT05": [
         "usd",
@@ -9809,21 +9845,21 @@
         1,
         4
     ],
-    "BBG00HPSG933": [
-        "usd",
-        "health_care",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "ACM Research Inc",
-        1,
-        4
-    ],
     "BBG000BFPK65": [
         "usd",
         "financial",
         "Соединенные Штаты Америки",
         "SPB",
         "Cincinnati Financial Corporation",
+        1,
+        4
+    ],
+    "BBG00HPSG933": [
+        "usd",
+        "health_care",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "ACM Research Inc",
         1,
         4
     ],
@@ -11339,15 +11375,6 @@
         1,
         4
     ],
-    "BBG005GBRSR6": [
-        "usd",
-        "real_estate",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Marcus & Millichap Inc",
-        1,
-        4
-    ],
     "BBG000BGW354": [
         "hkd",
         "financial",
@@ -11356,6 +11383,15 @@
         "Hong Kong Exchanges and Clearing",
         1,
         5
+    ],
+    "BBG005GBRSR6": [
+        "usd",
+        "real_estate",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Marcus & Millichap Inc",
+        1,
+        4
     ],
     "BBG000DD3510": [
         "usd",
@@ -11402,21 +11438,21 @@
         1,
         5
     ],
-    "BBG000BKQDQ7": [
-        "usd",
-        "industrials",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Gibraltar Industries Inc",
-        1,
-        4
-    ],
     "BBG000BBHHP9": [
         "usd",
         "industrials",
         "Соединенные Штаты Америки",
         "SPB",
         "Applied Industrial Technologies",
+        1,
+        4
+    ],
+    "BBG000BKQDQ7": [
+        "usd",
+        "industrials",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Gibraltar Industries Inc",
         1,
         4
     ],
@@ -12662,15 +12698,6 @@
         1,
         5
     ],
-    "BBG0087DLDQ6": [
-        "hkd",
-        "other",
-        "Китайская Народная Республика",
-        "SPB_HK",
-        "CK Hutchison Holdings",
-        10,
-        5
-    ],
     "BBG000BRNLL2": [
         "usd",
         "health_care",
@@ -12679,6 +12706,15 @@
         "Align Technology",
         1,
         4
+    ],
+    "BBG0087DLDQ6": [
+        "hkd",
+        "other",
+        "Китайская Народная Республика",
+        "SPB_HK",
+        "CK Hutchison Holdings",
+        10,
+        5
     ],
     "BBG00CVQZQ96": [
         "usd",
@@ -14669,21 +14705,21 @@
         1,
         4
     ],
-    "BBG000BB2DM7": [
-        "usd",
-        "materials",
-        "",
-        "SPB",
-        "Kinross Gold",
-        1,
-        4
-    ],
     "BBG000BFLXV3": [
         "usd",
         "consumer",
         "Соединенные Штаты Америки",
         "SPB",
         "Pilgrim's Pride Corp",
+        1,
+        4
+    ],
+    "BBG000BB2DM7": [
+        "usd",
+        "materials",
+        "",
+        "SPB",
+        "Kinross Gold",
         1,
         4
     ],
@@ -16469,15 +16505,6 @@
         1,
         4
     ],
-    "BBG000NT5184": [
-        "rub",
-        "telecom",
-        "Российская Федерация",
-        "MOEX",
-        "МГТС",
-        1,
-        5
-    ],
     "BBG000BDZJK6": [
         "hkd",
         "health_care",
@@ -16485,6 +16512,15 @@
         "SPB_HK",
         "Alibaba Health Information Technology",
         100,
+        5
+    ],
+    "BBG000NT5184": [
+        "rub",
+        "telecom",
+        "Российская Федерация",
+        "MOEX",
+        "МГТС",
+        1,
         5
     ],
     "BBG000BKKQ84": [
@@ -16901,6 +16937,15 @@
         1,
         4
     ],
+    "BBG000BJFJ98": [
+        "usd",
+        "real_estate",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Annaly Capital Management REIT",
+        1,
+        4
+    ],
     "BBG000BCY878": [
         "usd",
         "materials",
@@ -16937,15 +16982,6 @@
         1,
         4
     ],
-    "BBG000BMTFR4": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "KLA-Tencor",
-        1,
-        5
-    ],
     "BBG000BBRPL4": [
         "usd",
         "industrials",
@@ -16955,12 +16991,30 @@
         1,
         4
     ],
+    "BBG000BMTFR4": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "KLA-Tencor",
+        1,
+        5
+    ],
     "BBG000FLPRH1": [
         "usd",
         "industrials",
         "Соединенные Штаты Америки",
         "SPB",
         "Avis Budget Group",
+        1,
+        4
+    ],
+    "BBG000G7QX50": [
+        "usd",
+        "health_care",
+        "Соединенные Штаты Америки",
+        "SPB",
+        "Premier Inc",
         1,
         4
     ],
@@ -16972,15 +17026,6 @@
         "Hewlett Packard Enterprise",
         1,
         5
-    ],
-    "BBG000G7QX50": [
-        "usd",
-        "health_care",
-        "Соединенные Штаты Америки",
-        "SPB",
-        "Premier Inc",
-        1,
-        4
     ],
     "BBG002B9T6Y1": [
         "rub",
@@ -18377,15 +18422,6 @@
         1,
         4
     ],
-    "BBG000KLB4Q1": [
-        "usd",
-        "it",
-        "Соединенные Штаты Америки",
-        "SPB_MORNING",
-        "Skyworks Solutions",
-        1,
-        5
-    ],
     "BBG000C8L273": [
         "eur",
         "it",
@@ -18394,6 +18430,15 @@
         "Infineon Technologies AG",
         1,
         4
+    ],
+    "BBG000KLB4Q1": [
+        "usd",
+        "it",
+        "Соединенные Штаты Америки",
+        "SPB_MORNING",
+        "Skyworks Solutions",
+        1,
+        5
     ],
     "BBG00M8832B5": [
         "hkd",

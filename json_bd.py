@@ -187,7 +187,7 @@ def response(figi):
         "country": country,
         "exchange": exchange
     }
-
+    print(share)
     return share
 
 response(figi=figi_castom)
