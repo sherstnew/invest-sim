@@ -207,8 +207,8 @@ def buyact():
     buy_cost = int(share['last_price'])
     sell_cost = int(share['last_price']) - 1
 
-    buy_comission = int(share['last_price']) * 0.2
-    sell_comission = int(share['last_price']) * 0.2
+    buy_comission = round(int(share['last_price']) * 0.2, 2)
+    sell_comission = round(int(share['last_price']) * 0.2, 2)
 
     buy_total = buy_cost + buy_comission
     sell_total = sell_cost + sell_comission
