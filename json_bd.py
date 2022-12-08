@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 import json
 import requests
 
-figi_castom = input()
 op = 1
 day_procent = 0
 lasrprice = ""
@@ -106,12 +105,11 @@ with Client(t) as cl:
 # # print(etfs)
 shar = shares.set_index('figi').T.to_dict('list')
 
-with open("shares.json", "w", encoding="utf-8") as f:
+with open("/static/shares.json", "w", encoding="utf-8") as f:
     json.dump(shar, f, ensure_ascii=False, indent=4)
 
 
 def translate(figi):
-
     if shar[figi][1] == "other":
         shar[figi][1] = "Другое"
     elif shar[figi][1] == "health_care":
@@ -163,11 +161,12 @@ def sym_last_price(figi):
 
 
 def response(figi):
-    last_price(figi=figi_castom)
-    lst_price = sym_last_price(figi=figi_castom)
+    print(figi)
+    last_price(figi)
+    lst_price = sym_last_price(figi)
     day_procent = (lprice[-1] * 100) / lprice[0] - 100
     # print(day_procent)
-    translate(figi=figi_castom)
+    translate(figi)
     sector = shar[figi][1]
     name = shar[figi][4]
     country = shar[figi][2]
@@ -189,5 +188,3 @@ def response(figi):
     }
 
     return share
-
-response(figi=figi_castom)

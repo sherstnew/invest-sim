@@ -112,9 +112,6 @@ def api():
             cursor.execute("select * from history where token=" + request.json['utoken'])
             history = cursor.fetchall()
             return history
-        elif request.json['action'] == 'share':
-            share = jbd.response(request.json['figi'])
-            return share
         cursor.execute("select balance from fin where token=" + request.json['utoken'])
 
         bal = int(cursor.fetchall()[0][0])
@@ -165,7 +162,7 @@ def api():
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.cookies:
-        if request.cookies['token'] != '':
+        if 'token' in request.cookies:
             ic1 = 147
             ic2 = 138
             ic3 = 509
@@ -196,27 +193,23 @@ def buy():
 def buyact():
     act_id = request.args['id']
 
-    with open('static/shares.json', 'r', encoding='utf-8') as f:
-        text = json.load(f)
+    share = jbd.response(act_id)
 
-    act_name = text[act_id][4]
+    act_name = share['name']
 
     act_sector = text[act_id][1]
     act_sector = translate(act_sector)
 
-    act_desc = f"{act_name} \n Страна: {text[act_id][2]} \n Биржа: {text[act_id][3]}"
+    act_desc = f"{act_name} \n Страна: {share['country']} \n Биржа: {share['exchange']}"
 
-    if text[act_id][2] == "":
-        act_desc = f"{act_name} \n Биржа: {text[act_id][3]}"
-
-    buy_cost = 13
-    sell_cost = 12
-    daily_cost = 20
-    buy_comission = 1
-    sell_comission = 1
-    buy_total = 12
-    sell_total = 12
-    lots = 100
+    buy_cost = int(share['last_price'])
+    sell_cost = int(share['last_price']) - 1
+    daily_cost = share['day_procent']
+    buy_comission = int(share['last_price']) * 0.2
+    sell_comission = int(share['last_price']) * 0.2
+    buy_total = buy_cost + buy_comission
+    sell_total = sell_cost + sell_comission
+    lots = share['lots']
 
 
     return render_template('/act.html', act_name = act_name, act_desc = act_desc, act_sector = act_sector, buy_cost = buy_cost, sell_cost = sell_cost, daily_cost = daily_cost, buy_comission = buy_comission, sell_comission = sell_comission, buy_total = buy_total, sell_total = sell_total, lots = lots, act_id = act_id)

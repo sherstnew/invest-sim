@@ -10,7 +10,7 @@ if (token != '') {
     body = JSON.stringify(body)
     auth.setRequestHeader('Content-Type', 'application/json')
     auth.send(body)
-    
+
     auth.onload = () => {
         if (auth.status == '200') {
             accounts = JSON.parse(auth.response).accounts
@@ -25,7 +25,7 @@ if (token != '') {
             acc = acc.split(',')
             acc[0] = acc[0].replaceAll("'", "")
             if (token == '') {
-                location = '/login'
+                location.href = '/login'
             } else if (token == acc[0]) {
                 account = acc
             }
@@ -33,6 +33,6 @@ if (token != '') {
     }
 }
 } else {
-    document.cookie = 'token=nf'
+    document.cookie = 'token=""'
     window.location.href = '/login'
 }

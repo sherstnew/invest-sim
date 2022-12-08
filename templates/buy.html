@@ -57,7 +57,7 @@ let figis = []
 let shares = []
 const request = new XMLHttpRequest();
 
-request.open('GET', '/static/shares.json');
+request.open('GET', 'static/shares.json');
 
 request.onloadend = function() {
     DATA = JSON.parse(request.responseText)
