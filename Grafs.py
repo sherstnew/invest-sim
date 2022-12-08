@@ -7,10 +7,6 @@ from tinkoff.invest import Client, RequestError, CandleInterval, \
 import plotly.io as pltio
 import pandas as pd
 
-# import json_bd
-
-figi_info = input()
-
 t = "t.N7tYIuWUABuLI9d_6icZxTsfOkOna3nFLHbxQKmkxGfr9zTxN3rqVWisshKxSUCHu00uB5q2QDRFP-oKsVVHJw"
 
 pd.set_option('display.max_rows', 500)
@@ -18,7 +14,7 @@ pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 
 
-def run():
+def run(figi_info):
     try:
         with Client(t) as client:
             r = client.market_data.get_candles(
@@ -33,7 +29,7 @@ def run():
             fig.add_trace(pltgo.Scatter(x=df["time"], y=df["cost"], name='', line=dict(color="black")))
             fig.update_traces(hovertemplate="Дата: %{x}<br>Цена: %{y}$")
             fig.update_layout(plot_bgcolor='#ffba43')
-            fig.write_html('shareframes/' + figi_info + '.html')
+            fig.write_html('static/shareframes/' + figi_info + '.html')
 
     except RequestError as e:
         print(str(e))
@@ -54,6 +50,3 @@ def create_df(candles: [HistoricCandle]):
 
 def cast_money(v):
     return v.units + v.nano / 1e9
-
-
-run()

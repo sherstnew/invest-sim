@@ -36,45 +36,45 @@
     <div class="header">
         <div class="h-name">{{act_name}}</div>
         <div class="h-sector">Сектор: {{act_sector}}</div>
-        <div class="h-daily">За день: {{daily_cost}}₽</div>
+        <div class="h-daily">За день: {{daily_cost}}%</div>
     </div>
     <div class="content">
         <dialog class="error">Ошибка. Недостаточно средств или нет таких акций.</dialog>
-        <img src="/shareimages/{{act_id}}.png" alt="" class="act_graph">
+        <iframe src="static/shareframes/{{act_id}}.html" frameborder="0" class="act-graph"></iframe>
         <div class="act-box">
             <div class="desc-name">{{act_name}}</div>
-            <div class="desc-desc">{{act_desc}}</div>
+            <div class="desc-desc">Страна: {{act_country}} <br> Биржа: {{act_exchange}}</div>
             <div class="act-fin-box">
                 <div class="act-buy-box">
                     <div class="buy-open">Покупка</div>
-                    <div class="buy-cost">{{buy_cost}}₽</div>
+                    <div class="buy-cost">{{buy_cost}}{{currency}}</div>
                     <div class="buy-cont hide">
                         <div class="buy-cont-costs">
                             <div class="buy-daily-cost">За день: {{daily_cost}}%</div>
-                            <div class="buy-cont-cost">{{buy_cost}}₽</div>
+                            <div class="buy-cont-cost">{{buy_cost}}{{currency}}</div>
                         </div>
                         <div class="buy-lots">Доступно к покупке {{lots}} лотов</div>
                         <input type="number" class="buy-input" value="1">
                         <div class="buy-total">
-                            <div class="total-comission">Комиссия: {{buy_comission}}₽</div>
-                            <div class="total-total">Итого: {{buy_total}}₽</div>
+                            <div class="total-comission">Комиссия: {{buy_comission}}{{currency}}</div>
+                            <div class="total-total">Итого: {{buy_total}}{{currency}}</div>
                         </div>
                     </div>
                     <div class="buy-btn hide">Купить</div>
                 </div>
                 <div class="act-sell-box">
                     <div class="sell-open">Продажа</div>
-                    <div class="sell-cost">{{sell_cost}}₽</div>
+                    <div class="sell-cost">{{sell_cost}}{{currency}}</div>
                     <div class="sell-cont hide">
                         <div class="sell-cont-costs">
                             <div class="sell-daily-cost">За день: {{daily_cost}}%</div>
-                            <div class="sell-cont-cost">{{sell_cost}}₽</div>
+                            <div class="sell-cont-cost">{{sell_cost}}{{currency}}</div>
                         </div>
                         <div class="sell-lots">Доступно к покупке {{lots}} лотов</div>
                         <input type="number" class="sell-input" value="1">
                         <div class="sell-total">
-                            <div class="total-comission">Комиссия: {{sell_comission}}₽</div>
-                            <div class="total-total">Итого: {{sell_total}}₽</div>
+                            <div class="total-comission">Комиссия: {{sell_comission}}{{currency}}</div>
+                            <div class="total-total">Итого: {{sell_total}}{{currency}}</div>
                         </div>
                     </div>
                     <div class="sell-btn hide">Продать</div>

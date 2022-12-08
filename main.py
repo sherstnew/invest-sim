@@ -11,6 +11,7 @@ from email.mime.text import MIMEText
 import random
 from flask import Flask,send_from_directory
 import json_bd as jbd
+import Grafs as gr
 import os
 application=Flask(__name__)
 
@@ -194,25 +195,29 @@ def buyact():
     act_id = request.args['id']
 
     share = jbd.response(act_id)
+    gr.run(act_id)
 
     act_name = share['name']
+    act_sector = share['sector']
+    act_country = share['country']
+    act_exchange = share['exchange']
 
-    act_sector = text[act_id][1]
-    act_sector = translate(act_sector)
-
-    act_desc = f"{act_name} \n Страна: {share['country']} \n Биржа: {share['exchange']}"
+    daily_cost = round(share['day_procent'], 3)
 
     buy_cost = int(share['last_price'])
     sell_cost = int(share['last_price']) - 1
-    daily_cost = share['day_procent']
+
     buy_comission = int(share['last_price']) * 0.2
     sell_comission = int(share['last_price']) * 0.2
+
     buy_total = buy_cost + buy_comission
     sell_total = sell_cost + sell_comission
+
     lots = share['lots']
+    currency = share['currency']
 
 
-    return render_template('/act.html', act_name = act_name, act_desc = act_desc, act_sector = act_sector, buy_cost = buy_cost, sell_cost = sell_cost, daily_cost = daily_cost, buy_comission = buy_comission, sell_comission = sell_comission, buy_total = buy_total, sell_total = sell_total, lots = lots, act_id = act_id)
+    return render_template('/act.html', act_name = act_name, act_sector = act_sector, buy_cost = buy_cost, sell_cost = sell_cost, daily_cost = daily_cost, buy_comission = buy_comission, sell_comission = sell_comission, buy_total = buy_total, sell_total = sell_total, lots = lots, act_id = act_id, currency=currency, act_country = act_country, act_exchange = act_exchange)
 
 
 @app.route('/profile', methods=['GET', 'POST'])

@@ -105,7 +105,7 @@ with Client(t) as cl:
 # # print(etfs)
 shar = shares.set_index('figi').T.to_dict('list')
 
-with open("/static/shares.json", "w", encoding="utf-8") as f:
+with open("static/shares.json", "w", encoding="utf-8") as f:
     json.dump(shar, f, ensure_ascii=False, indent=4)
 
 
@@ -149,21 +149,30 @@ def last_price(figi):
         lprice.append(candle.close.units + candle.close.nano / 1e9)
 
 
-def sym_last_price(figi):
+# def sym_last_price(figi):
+#     if shar[figi][0] == "usd":
+#         lastprice = str(lprice[-1]) + "$"
+#     elif shar[figi][0] == "eur":
+#         lastprice = str(lprice[-1]) + "€"
+#     elif shar[figi][0] == "rub":
+#         lastprice = str(lprice[-1]) + "₽"
+#     return lastprice
+
+def getCurrency(figi):
     if shar[figi][0] == "usd":
-        lastprice = str(lprice[-1]) + "$"
+        currency = "$"
     elif shar[figi][0] == "eur":
-        lastprice = str(lprice[-1]) + "€"
+        currency = "€"
     elif shar[figi][0] == "rub":
-        lastprice = str(lprice[-1]) + "₽"
-    return lastprice
+        currency = "₽"
+    return currency
 
 
 
 def response(figi):
-    print(figi)
     last_price(figi)
-    lst_price = sym_last_price(figi)
+    # lst_price = sym_last_price(figi)
+    currency = getCurrency(figi)
     day_procent = (lprice[-1] * 100) / lprice[0] - 100
     # print(day_procent)
     translate(figi)
@@ -178,13 +187,14 @@ def response(figi):
     exchange = shar[figi][3]
     share = {
         "name": name,
-        "last_price": lst_price,
+        "last_price": lprice[-1],
         "day_procent": day_procent,
         "lots": lot,
         "trade_state": trade_enable,
         "sector": sector,
         "country": country,
-        "exchange": exchange
+        "exchange": exchange,
+        "currency": currency,
     }
 
     return share
