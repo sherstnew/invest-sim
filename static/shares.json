@@ -89,6 +89,15 @@
         1,
         5
     ],
+    "BBG000BN56Q9": [
+        "rub",
+        "consumer",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Детский Мир",
+        10,
+        5
+    ],
     "BBG000DY6735": [
         "usd",
         "consumer",
@@ -170,6 +179,15 @@
         1,
         5
     ],
+    "BBG000RMWQD4": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "En+ Group",
+        1,
+        5
+    ],
     "BBG0064N0ZZ5": [
         "usd",
         "it",
@@ -212,6 +230,15 @@
         "Соединенные Штаты Америки",
         "SPB",
         "Denali Therapeutics Inc",
+        1,
+        5
+    ],
+    "BBG004PYF2N3": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Polymetal",
         1,
         5
     ],
@@ -1988,6 +2015,15 @@
         1,
         5
     ],
+    "BBG004RVFCY3": [
+        "rub",
+        "consumer",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Магнит",
+        1,
+        5
+    ],
     "BBG000C7LMS8": [
         "usd",
         "consumer",
@@ -3167,12 +3203,30 @@
         1,
         5
     ],
+    "BBG00ZHCX1X2": [
+        "rub",
+        "consumer",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Fix Price Group",
+        1,
+        5
+    ],
     "BBG000BP0KQ8": [
         "usd",
         "telecom",
         "Соединенные Штаты Америки",
         "SPB_MORNING",
         "Electronic Arts",
+        1,
+        5
+    ],
+    "BBG00178PGX3": [
+        "rub",
+        "it",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "VK",
         1,
         5
     ],
@@ -3227,6 +3281,15 @@
         "Соединенные Штаты Америки",
         "SPB",
         "Tucows Inc",
+        1,
+        5
+    ],
+    "BBG004S689R0": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "ФосАгро",
         1,
         5
     ],
@@ -3884,6 +3947,15 @@
         "Соединенные Штаты Америки",
         "SPB",
         "G1 Therapeutics Inc",
+        1,
+        5
+    ],
+    "BBG004S68829": [
+        "rub",
+        "energy",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Татнефть - привилегированные акции",
         1,
         5
     ],
@@ -4571,6 +4643,24 @@
         1,
         5
     ],
+    "BBG004S68507": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Магнитогорский металлургический комбинат",
+        10,
+        5
+    ],
+    "BBG004730ZJ9": [
+        "rub",
+        "financial",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Банк ВТБ",
+        10000,
+        5
+    ],
     "BBG000BGLRN3": [
         "usd",
         "telecom",
@@ -4769,6 +4859,15 @@
         1,
         5
     ],
+    "BBG004S683W7": [
+        "rub",
+        "consumer",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Аэрофлот",
+        10,
+        5
+    ],
     "BBG000BHPL78": [
         "usd",
         "industrials",
@@ -4814,6 +4913,15 @@
         1,
         5
     ],
+    "BBG012YQ6P43": [
+        "rub",
+        "it",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "АДР Циан",
+        1,
+        5
+    ],
     "BBG002BC7WC5": [
         "usd",
         "financial",
@@ -4848,6 +4956,15 @@
         "SPB_MORNING",
         "Mastercard",
         1,
+        5
+    ],
+    "BBG008F2T3T2": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "РУСАЛ",
+        10,
         5
     ],
     "BBG000BR1KR2": [
@@ -5244,6 +5361,15 @@
         "SPB",
         "NuVasive Inc",
         1,
+        5
+    ],
+    "BBG004730N88": [
+        "rub",
+        "financial",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Сбер Банк",
+        10,
         5
     ],
     "BBG00441QMJ7": [
@@ -6045,6 +6171,15 @@
         "SPB_MORNING",
         "Incyte",
         1,
+        5
+    ],
+    "BBG004S68B31": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "АЛРОСА",
+        10,
         5
     ],
     "BBG000BC7VW9": [
@@ -6920,6 +7055,15 @@
         1,
         5
     ],
+    "BBG004RVFFC0": [
+        "rub",
+        "energy",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Татнефть",
+        1,
+        5
+    ],
     "BBG000C5HS04": [
         "usd",
         "consumer",
@@ -6980,6 +7124,15 @@
         "Соединенные Штаты Америки",
         "SPB_MORNING",
         "Kraft Heinz",
+        1,
+        5
+    ],
+    "BBG00JXPFBN0": [
+        "rub",
+        "consumer",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "ГДР X5 RetailGroup",
         1,
         5
     ],
@@ -7649,6 +7802,15 @@
         1,
         5
     ],
+    "BBG004730RP0": [
+        "rub",
+        "energy",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Газпром",
+        10,
+        5
+    ],
     "BBG001PD3L10": [
         "eur",
         "materials",
@@ -7811,6 +7973,15 @@
         1,
         5
     ],
+    "BBG0047315Y7": [
+        "rub",
+        "financial",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Сбер Банк - привилегированные акции",
+        10,
+        5
+    ],
     "BBG000BGPQW1": [
         "usd",
         "consumer",
@@ -7827,6 +7998,15 @@
         "SPB",
         "Parker-Hannifin",
         1,
+        5
+    ],
+    "BBG004S682Z6": [
+        "rub",
+        "telecom",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Ростелеком",
+        10,
         5
     ],
     "BBG00JPRDQH1": [
@@ -8036,6 +8216,15 @@
         1,
         5
     ],
+    "BBG004S681W1": [
+        "rub",
+        "telecom",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "МТС",
+        10,
+        5
+    ],
     "BBG00ZNRRJM2": [
         "usd",
         "it",
@@ -8195,6 +8384,15 @@
         "Соединенные Штаты Америки",
         "SPB_MORNING",
         "Baker Hughes",
+        1,
+        5
+    ],
+    "BBG00475KHX6": [
+        "rub",
+        "energy",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Транснефть - привилегированные акции",
         1,
         5
     ],
@@ -8594,6 +8792,15 @@
         1,
         5
     ],
+    "TCS00A103X66": [
+        "rub",
+        "it",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Positive Technologies",
+        1,
+        5
+    ],
     "BBG000GTYWL7": [
         "usd",
         "health_care",
@@ -8709,6 +8916,15 @@
         "SPB",
         "Century Communities",
         1,
+        5
+    ],
+    "BBG00475JZZ6": [
+        "rub",
+        "utilities",
+        "Российская Федерация",
+        "MOEX_PLUS",
+        "Россети",
+        10000,
         5
     ],
     "BBG000C42VL3": [
@@ -9530,6 +9746,15 @@
         1,
         5
     ],
+    "BBG004S682J4": [
+        "rub",
+        "utilities",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Российские сети",
+        1000,
+        5
+    ],
     "BBG000BGXMG9": [
         "usd",
         "consumer",
@@ -9899,6 +10124,15 @@
         1,
         5
     ],
+    "BBG005D1WCQ1": [
+        "rub",
+        "it",
+        "Российская Федерация",
+        "MOEX_PLUS",
+        "QIWI",
+        1,
+        5
+    ],
     "BBG000NSCNT7": [
         "usd",
         "financial",
@@ -9924,6 +10158,15 @@
         "SPB_MORNING",
         "Otis Worldwide",
         1,
+        5
+    ],
+    "BBG004S68473": [
+        "rub",
+        "utilities",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Интер РАО ЕЭС",
+        100,
         5
     ],
     "BBG000FJS1S8": [
@@ -10032,6 +10275,15 @@
         "SPB_MORNING",
         "Vale SA",
         1,
+        5
+    ],
+    "BBG00475K2X9": [
+        "rub",
+        "utilities",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "РусГидро",
+        1000,
         5
     ],
     "BBG000TJ8XZ7": [
@@ -10439,6 +10691,15 @@
         1,
         5
     ],
+    "BBG004S681B4": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "НЛМК",
+        10,
+        5
+    ],
     "BBG000BB6KF5": [
         "usd",
         "financial",
@@ -10526,6 +10787,15 @@
         "Соединенные Штаты Америки",
         "SPB_MORNING",
         "McDonald’s",
+        1,
+        5
+    ],
+    "BBG00QPYJ5H0": [
+        "rub",
+        "financial",
+        "Российская Федерация",
+        "MOEX_PLUS",
+        "TCS Group",
         1,
         5
     ],
@@ -10718,6 +10988,15 @@
         1,
         5
     ],
+    "BBG004S681M2": [
+        "rub",
+        "energy",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Сургутнефтегаз - привилегированные акции",
+        100,
+        5
+    ],
     "BBG000C4S3P3": [
         "usd",
         "industrials",
@@ -10841,6 +11120,15 @@
         "Соединенные Штаты Америки",
         "SPB_MORNING",
         "Marathon Petroleum",
+        1,
+        5
+    ],
+    "BBG006L8G4H1": [
+        "rub",
+        "telecom",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Yandex",
         1,
         5
     ],
@@ -11453,6 +11741,15 @@
         "Соединенные Штаты Америки",
         "SPB",
         "East West Ban",
+        1,
+        5
+    ],
+    "BBG00475KKY8": [
+        "rub",
+        "energy",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "НОВАТЭК",
         1,
         5
     ],
@@ -12455,6 +12752,15 @@
         1,
         5
     ],
+    "BBG004731489": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Норильский никель",
+        1,
+        5
+    ],
     "BBG000BN1M88": [
         "usd",
         "consumer",
@@ -12633,6 +12939,15 @@
         "SPB_MORNING",
         "PG&E",
         1,
+        5
+    ],
+    "BBG004730JJ5": [
+        "rub",
+        "financial",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Московская Биржа",
+        10,
         5
     ],
     "BBG00LNJRQ09": [
@@ -13355,6 +13670,15 @@
         1,
         5
     ],
+    "BBG004S68614": [
+        "rub",
+        "financial",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "АФК Система",
+        100,
+        5
+    ],
     "BBG000BB07P9": [
         "usd",
         "materials",
@@ -13517,6 +13841,15 @@
         1,
         5
     ],
+    "BBG000R607Y3": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Полюс Золото",
+        1,
+        5
+    ],
     "BBG000BL9C59": [
         "usd",
         "real_estate",
@@ -13616,12 +13949,30 @@
         1,
         5
     ],
+    "BBG00Y91R9T3": [
+        "rub",
+        "consumer",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Ozon Holdings PLC",
+        1,
+        5
+    ],
     "BBG000J0D904": [
         "usd",
         "consumer",
         "Соединенные Штаты Америки",
         "SPB",
         "Big Lots Inc",
+        1,
+        5
+    ],
+    "BBG004731032": [
+        "rub",
+        "energy",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "ЛУКОЙЛ",
         1,
         5
     ],
@@ -14261,6 +14612,15 @@
         "Соединенные Штаты Америки",
         "SPB",
         "Dana Inc",
+        1,
+        5
+    ],
+    "BBG000VFX6Y4": [
+        "rub",
+        "industrials",
+        "Российская Федерация",
+        "MOEX_PLUS",
+        "Globaltrans Investment PLC",
         1,
         5
     ],
@@ -15002,6 +15362,24 @@
         1,
         5
     ],
+    "BBG0047315D0": [
+        "rub",
+        "energy",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Сургутнефтегаз",
+        100,
+        5
+    ],
+    "BBG009GSYN76": [
+        "rub",
+        "financial",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "МКБ",
+        100,
+        5
+    ],
     "BBG0079T1PZ6": [
         "usd",
         "financial",
@@ -15290,6 +15668,15 @@
         1,
         5
     ],
+    "BBG004S68BH6": [
+        "rub",
+        "real_estate",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "ПИК",
+        1,
+        5
+    ],
     "BBG000BZ0DK8": [
         "usd",
         "health_care",
@@ -15431,6 +15818,15 @@
         "Соединенные Штаты Америки",
         "SPB",
         "Spirit Realty Capital REIT",
+        1,
+        5
+    ],
+    "BBG004731354": [
+        "rub",
+        "energy",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Роснефть",
         1,
         5
     ],
@@ -16196,6 +16592,15 @@
         "Соединенные Штаты Америки",
         "SPB",
         "AAON",
+        1,
+        5
+    ],
+    "BBG00475K6C3": [
+        "rub",
+        "materials",
+        "Российская Федерация",
+        "MOEX_EVENING_WEEKEND",
+        "Северсталь",
         1,
         5
     ],

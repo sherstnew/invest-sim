@@ -35,7 +35,7 @@
 </div>
 <div class="container">
     <div class="history-container">
-        
+
     </div>
 </div>
 <script src="/static/scripts/auth.js"></script>
@@ -63,7 +63,7 @@
             hist_method.classList.add('history-method')
             hist_name.classList.add('history-name')
             hist_cost.classList.add('history-cost')
-            
+
             if (el[1] == 'buy') {
                 hist_method.innerHTML = 'Покупка'
                 hist_cost.innerHTML = '-' + el[3] + '₽'
@@ -79,13 +79,13 @@
 
             shares.onloadend = function() {
                 DATA = JSON.parse(shares.responseText)
-                DATA = DATA.name
-                DATA = Object.values(DATA)
-                hist_name.innerHTML = DATA[el[2]]
+                let sh = Object.values(DATA)
+                let figis = Object.keys(DATA)
+                hist_name.innerHTML = sh[figis.indexOf(el[2])][4]
                 hist_el.appendChild(hist_method)
                 hist_el.appendChild(hist_name)
                 hist_el.appendChild(hist_cost)
-                hist_cont.appendChild(hist_el)                
+                hist_cont.appendChild(hist_el)
             }
             shares.send()
         })

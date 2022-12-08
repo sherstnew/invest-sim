@@ -61,7 +61,8 @@ buy_btn.addEventListener('click', () => {
         amount: 0,
     }
     body.act_id = searchString.get('id')
-    body.cost = buy_cost.innerHTML.replace('₽', '')
+    let cost = buy_cost.innerHTML.replace('$', '').replace('₽', '').replace('€', '')
+    body.cost = cost
     body.utoken = getCookie('token')
     body.amount = buy_input.value
     body = JSON.stringify(body)
@@ -86,6 +87,8 @@ sell_btn.addEventListener('click', () => {
         amount: 0,
     }
     body.act_id = searchString.get('id')
+    body.cost = buy_cost.innerHTML.replace('$', '')
+    body.cost = buy_cost.innerHTML.replace('€', '')
     body.cost = sell_cost.innerHTML.replace('₽', '')
     body.utoken = getCookie('token')
     body.amount = sell_input.value
